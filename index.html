@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Dra. Lara Pires | Blefaroplastia e Estética Facial</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#BCA578",
+                        "primary-dark": "#A58F63",
+                        "background-light": "#FAFAFA",
+                        "background-dark": "#1A1A1A",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#262626",
+                        "text-light": "#333333",
+                        "text-dark": "#E5E5E5",
+                        "muted-light": "#666666",
+                        "muted-dark": "#A3A3A3",
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        body: ["Montserrat", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "4px",
+                    },
+                },
+            },
+        };
+    </script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+    <style>
+        html { scroll-behavior: smooth; }
+        .clip-image-angled {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body antialiased transition-colors duration-300">
+<nav class="fixed w-full z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <div class="flex-shrink-0 flex items-center">
+                <a class="font-display text-2xl tracking-widest text-primary font-medium" href="#">
+                    LARA<span class="font-light">PIRES</span>
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a class="text-sm uppercase tracking-widest hover:text-primary transition-colors" href="#home">Home</a>
+                <a class="text-sm uppercase tracking-widest hover:text-primary transition-colors" href="#procedures">Procedimentos</a>
+                <a class="text-sm uppercase tracking-widest hover:text-primary transition-colors" href="#about">Sobre</a>
+                <a class="text-sm uppercase tracking-widest hover:text-primary transition-colors" href="#testimonials">Depoimentos</a>
+                <a class="text-sm uppercase tracking-widest hover:text-primary transition-colors" href="#contact">Contato</a>
+            </div>
+            <div class="md:hidden">
+                <button class="text-gray-500 hover:text-primary focus:outline-none">
+                    <span class="material-icons-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+<section class="relative pt-20 lg:pt-0 min-h-screen flex items-center overflow-hidden" id="home">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center h-full">
+            <div class="order-2 lg:order-1 flex flex-col justify-center space-y-8 py-12 lg:py-0 fade-in-up">
+                <div class="w-16 h-0.5 bg-primary mb-4"></div>
+                <h1 class="font-display text-5xl md:text-6xl lg:text-7xl leading-tight text-text-light dark:text-white">
+                    Realce sua <br/>
+                    <span class="text-primary italic">beleza natural</span>
+                </h1>
+                <p class="font-body text-muted-light dark:text-muted-dark text-lg md:text-xl font-light max-w-lg tracking-wide">
+                    Especialista em Blefaroplastia e Estética Facial. Cuidado médico de excelência para harmonizar seus traços com elegância.
+                </p>
+                <div class="pt-4">
+                    <a class="inline-flex items-center px-8 py-4 bg-primary text-white text-sm font-medium uppercase tracking-widest hover:bg-primary-dark transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5" href="#contact">
+                        Agendar Consulta
+                    </a>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2 relative h-full flex justify-end">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-primary/10 to-transparent rounded-full blur-3xl -z-10"></div>
+                <div class="relative w-full max-w-md lg:max-w-full aspect-[3/4] lg:aspect-auto lg:h-[85vh] overflow-hidden rounded-t-[100px] lg:rounded-t-none lg:rounded-bl-[100px] border-b-8 border-primary shadow-2xl">
+                    <img alt="Dra. Lara Pires em seu consultório" class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" src="assets/hero-image.jpg"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-20 bg-surface-light dark:bg-surface-dark border-y border-gray-100 dark:border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-8 border border-gray-100 dark:border-gray-700 bg-background-light dark:bg-background-dark hover:border-primary/50 transition-colors duration-300 group">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300 text-primary">
+                    <span class="material-icons-outlined text-2xl">apartment</span>
+                </div>
+                <h3 class="font-display text-xl mb-3 dark:text-white">Clínica Moderna</h3>
+                <p class="text-muted-light dark:text-muted-dark font-light text-sm leading-relaxed">
+                    Ambiente sofisticado e acolhedor, projetado para oferecer o máximo conforto e segurança durante seus procedimentos.
+                </p>
+            </div>
+            <div class="p-8 border border-gray-100 dark:border-gray-700 bg-background-light dark:bg-background-dark hover:border-primary/50 transition-colors duration-300 group">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300 text-primary">
+                    <span class="material-icons-outlined text-2xl">favorite_border</span>
+                </div>
+                <h3 class="font-display text-xl mb-3 dark:text-white">Atendimento Humanizado</h3>
+                <p class="text-muted-light dark:text-muted-dark font-light text-sm leading-relaxed">
+                    Cada paciente é único. Oferecemos uma abordagem personalizada, ouvindo suas necessidades e desejos.
+                </p>
+            </div>
+            <div class="p-8 border border-gray-100 dark:border-gray-700 bg-background-light dark:bg-background-dark hover:border-primary/50 transition-colors duration-300 group">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300 text-primary">
+                    <span class="material-icons-outlined text-2xl">biotech</span>
+                </div>
+                <h3 class="font-display text-xl mb-3 dark:text-white">Tecnologia de Ponta</h3>
+                <p class="text-muted-light dark:text-muted-dark font-light text-sm leading-relaxed">
+                    Utilizamos os equipamentos e técnicas mais avançados do mercado para garantir resultados naturais e duradouros.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-24 bg-background-light dark:bg-background-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-primary text-sm uppercase tracking-[0.2em] font-medium block mb-3">Transformação</span>
+            <h2 class="font-display text-4xl md:text-5xl text-text-light dark:text-white mb-6">Resultados que Inspiram</h2>
+            <div class="w-24 h-0.5 bg-primary mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="relative group cursor-pointer overflow-hidden rounded-lg shadow-xl">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10"></div>
+                <img alt="Comparativo Antes e Depois" class="w-full h-[400px] object-cover" src="assets/before-after.jpg"/>
+                <div class="absolute bottom-6 left-6 z-20">
+                    <p class="text-white font-display text-2xl">Rejuvenescimento</p>
+                    <p class="text-gray-200 text-sm font-light">Bioestimuladores de Colágeno</p>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <h3 class="font-display text-3xl text-text-light dark:text-white">A arte de suavizar o tempo</h3>
+                <p class="text-muted-light dark:text-muted-dark leading-relaxed font-light">
+                    Nossos tratamentos buscam a harmonia facial, respeitando suas características únicas. Acreditamos que a verdadeira estética facial não altera quem você é, mas realça a sua melhor versão.
+                </p>
+                <ul class="space-y-4 pt-4">
+                    <li class="flex items-center text-text-light dark:text-gray-300">
+                        <span class="material-icons-outlined text-primary mr-3">check_circle</span>
+                        <span>Resultados sutis e naturais</span>
+                    </li>
+                    <li class="flex items-center text-text-light dark:text-gray-300">
+                        <span class="material-icons-outlined text-primary mr-3">check_circle</span>
+                        <span>Recuperação otimizada</span>
+                    </li>
+                    <li class="flex items-center text-text-light dark:text-gray-300">
+                        <span class="material-icons-outlined text-primary mr-3">check_circle</span>
+                        <span>Segurança em cada etapa</span>
+                    </li>
+                </ul>
+                <div class="pt-6">
+                    <a class="text-primary hover:text-primary-dark font-medium uppercase tracking-widest text-sm border-b border-primary pb-1 inline-block" href="#procedures">Ver todos os tratamentos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-24 bg-surface-light dark:bg-surface-dark" id="procedures">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-gray-200 dark:border-gray-700 pb-8">
+            <div class="max-w-2xl">
+                <span class="text-primary text-sm uppercase tracking-[0.2em] font-medium block mb-3">Especialidades</span>
+                <h2 class="font-display text-4xl text-text-light dark:text-white">Procedimentos Realizados</h2>
+            </div>
+            <div class="hidden md:block">
+                <button class="w-12 h-12 border border-gray-300 dark:border-gray-600 rounded-full flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all mr-2">
+                    <span class="material-icons-outlined">arrow_back</span>
+                </button>
+                <button class="w-12 h-12 border border-gray-300 dark:border-gray-600 rounded-full flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all inline-flex">
+                    <span class="material-icons-outlined">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="group relative bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <img alt="Blefaroplastia" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="assets/blefaroplastia.jpg"/>
+                </div>
+                <div class="p-6 relative bg-background-light dark:bg-background-dark z-10 -mt-12 mx-4 shadow-sm">
+                    <h3 class="font-display text-lg mb-2 dark:text-white group-hover:text-primary transition-colors">Blefaroplastia</h3>
+                    <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide mb-4">Cirúrgico</p>
+                    <a class="text-primary text-sm font-medium flex items-center group/link" href="#">
+                        Saiba mais <span class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+            <div class="group relative bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <img alt="Peeling Químico" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="assets/peeling.jpg"/>
+                </div>
+                <div class="p-6 relative bg-background-light dark:bg-background-dark z-10 -mt-12 mx-4 shadow-sm">
+                    <h3 class="font-display text-lg mb-2 dark:text-white group-hover:text-primary transition-colors">Peeling Químico</h3>
+                    <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide mb-4">Estético</p>
+                    <a class="text-primary text-sm font-medium flex items-center group/link" href="#">
+                        Saiba mais <span class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+            <div class="group relative bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <img alt="Microagulhamento" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="assets/microagulhamento.jpg"/>
+                </div>
+                <div class="p-6 relative bg-background-light dark:bg-background-dark z-10 -mt-12 mx-4 shadow-sm">
+                    <h3 class="font-display text-lg mb-2 dark:text-white group-hover:text-primary transition-colors">Microagulhamento</h3>
+                    <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide mb-4">Estético</p>
+                    <a class="text-primary text-sm font-medium flex items-center group/link" href="#">
+                        Saiba mais <span class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+            <div class="group relative bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <img alt="Bioestimuladores" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="assets/bioestimuladores.jpg"/>
+                </div>
+                <div class="p-6 relative bg-background-light dark:bg-background-dark z-10 -mt-12 mx-4 shadow-sm">
+                    <h3 class="font-display text-lg mb-2 dark:text-white group-hover:text-primary transition-colors">Bioestimuladores</h3>
+                    <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide mb-4">Injetável</p>
+                    <a class="text-primary text-sm font-medium flex items-center group/link" href="#">
+                        Saiba mais <span class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-24 bg-background-light dark:bg-background-dark overflow-hidden" id="about">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+                <div class="space-y-4 mt-8">
+                    <img alt="Dra Lara Casual" class="rounded-lg shadow-md w-full h-64 object-cover" src="assets/dra-lara-casual.jpg"/>
+                    <img alt="Detalhes da Clínica" class="rounded-lg shadow-md w-full h-48 object-cover" src="assets/clinica-detalhes.jpg"/>
+                </div>
+                <div class="space-y-4">
+                    <img alt="Dra Lara no Escritório" class="rounded-lg shadow-md w-full h-48 object-cover" src="assets/dra-lara-escritorio.jpg"/>
+                    <img alt="Dra Lara em Pé" class="rounded-lg shadow-md w-full h-64 object-cover" src="assets/dra-lara-pe.jpg"/>
+                </div>
+            </div>
+            <div class="lg:col-span-7 lg:pl-12">
+                <span class="text-primary text-sm uppercase tracking-[0.2em] font-medium block mb-3">Sobre a Médica</span>
+                <h2 class="font-display text-4xl lg:text-5xl text-text-light dark:text-white mb-6">Dra. Lara Pires</h2>
+                <h3 class="font-body text-xl text-muted-light dark:text-muted-dark font-light mb-8">CRM 32176</h3>
+                <div class="prose prose-lg dark:prose-invert text-muted-light dark:text-muted-dark font-light mb-8">
+                    <p>
+                        Formada pela Universidade Federal da Bahia e especialista em tratamentos faciais e corporais, a Dra. Lara Pires dedica sua carreira a entender a beleza de forma integral.
+                    </p>
+                    <p>
+                        "Após anos atuando na medicina estética, o meu propósito sempre foi ressaltar o brilho escondido em cada face. Suavizar os sinais do tempo na pele e/ou embelezar quando há necessidade estrutural - sempre mantendo a naturalidade desses processos - são preceitos básicos na minha prática clínica."
+                    </p>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a class="px-8 py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors uppercase tracking-widest text-sm font-medium" href="#contact">
+                        Entre em Contato
+                    </a>
+                    <div class="flex space-x-4">
+                        <a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="material-icons-outlined">facebook</span></a>
+                        <a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="material-icons-outlined">camera_alt</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-24 bg-surface-light dark:bg-surface-dark relative" id="testimonials">
+    <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none overflow-hidden">
+        <div class="absolute -right-20 top-20 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+    </div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <span class="text-primary text-sm uppercase tracking-[0.2em] font-medium block mb-3">Depoimentos</span>
+        <h2 class="font-display text-3xl md:text-4xl text-text-light dark:text-white mb-16">O que os pacientes dizem</h2>
+        <div class="bg-background-light dark:bg-background-dark p-10 md:p-14 shadow-2xl rounded-sm border border-gray-100 dark:border-gray-800">
+            <div class="mb-6 text-primary">
+                <span class="material-icons-outlined text-4xl">format_quote</span>
+            </div>
+            <p class="font-display text-xl md:text-2xl italic text-text-light dark:text-gray-200 mb-8 leading-relaxed">
+                "O cuidado da Dra. Lara é único. Ela não apenas trata, mas acolhe. O resultado da minha blefaroplastia superou todas as expectativas, devolvendo uma leveza ao meu olhar que eu achei que não teria mais."
+            </p>
+            <div class="flex items-center justify-center space-x-4">
+                <div class="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
+                    <img alt="Paciente" class="w-full h-full object-cover" src="assets/paciente-depoimento.jpg"/>
+                </div>
+                <div class="text-left">
+                    <p class="font-medium text-text-light dark:text-white">Mariana Costa</p>
+                    <div class="flex text-primary text-xs">
+                        <span class="material-icons-outlined text-[16px]">star</span>
+                        <span class="material-icons-outlined text-[16px]">star</span>
+                        <span class="material-icons-outlined text-[16px]">star</span>
+                        <span class="material-icons-outlined text-[16px]">star</span>
+                        <span class="material-icons-outlined text-[16px]">star</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center mt-8 space-x-2">
+            <button class="w-2.5 h-2.5 rounded-full bg-primary"></button>
+            <button class="w-2.5 h-2.5 rounded-full bg-gray-300 dark:bg-gray-700 hover:bg-primary/50 transition-colors"></button>
+            <button class="w-2.5 h-2.5 rounded-full bg-gray-300 dark:bg-gray-700 hover:bg-primary/50 transition-colors"></button>
+        </div>
+    </div>
+</section>
+<footer class="bg-background-dark text-white pt-20 pb-10 border-t border-gray-800" id="contact">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1 lg:col-span-1">
+                <a class="font-display text-2xl tracking-widest text-primary font-medium mb-6 block" href="#">
+                    LARA<span class="font-light">PIRES</span>
+                </a>
+                <p class="text-gray-400 font-light text-sm leading-relaxed mb-6">
+                    Medicina estética com ética, segurança e resultados naturais. Sua beleza é nossa prioridade.
+                </p>
+                <div class="flex space-x-4">
+                    <a class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-primary hover:border-primary transition-all" href="#">
+                        <span class="material-icons-outlined text-lg">facebook</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-primary hover:border-primary transition-all" href="#">
+                        <span class="material-icons-outlined text-lg">camera_alt</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-primary hover:border-primary transition-all" href="#">
+                        <span class="material-icons-outlined text-lg">whatsapp</span>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-primary font-display text-lg mb-6">Menu</h4>
+                <ul class="space-y-3 text-sm font-light text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="#home">Home</a></li>
+                    <li><a class="hover:text-white transition-colors" href="#about">Sobre Mim</a></li>
+                    <li><a class="hover:text-white transition-colors" href="#procedures">Procedimentos</a></li>
+                    <li><a class="hover:text-white transition-colors" href="#testimonials">Depoimentos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-primary font-display text-lg mb-6">Contato</h4>
+                <ul class="space-y-4 text-sm font-light text-gray-400">
+                    <li class="flex items-start">
+                        <span class="material-icons-outlined text-primary mr-3 text-lg mt-0.5">location_on</span>
+                        <span>Av. Getúlio Vargas, 1234<br/>Feira de Santana - BA</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="material-icons-outlined text-primary mr-3 text-lg">phone</span>
+                        <span>(75) 99999-9999</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="material-icons-outlined text-primary mr-3 text-lg">email</span>
+                        <span>contato@dralarapires.com.br</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-primary font-display text-lg mb-6">Agendamento</h4>
+                <p class="text-gray-400 font-light text-sm mb-4">
+                    Entre em contato para verificar disponibilidade de horários.
+                </p>
+                <a class="w-full block text-center bg-primary hover:bg-primary-dark text-white py-3 text-sm uppercase tracking-widest font-medium transition-colors" href="#">
+                    Falar no WhatsApp
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-light">
+            <p>© 2023 Dra. Lara Pires. Todos os direitos reservados.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a class="hover:text-white" href="#">Política de Privacidade</a>
+                <a class="hover:text-white" href="#">Termos de Uso</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
