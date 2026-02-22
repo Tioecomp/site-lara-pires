@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Blefaroplastia | Rejuvenescimento do Olhar</title>
+    <title>Fios de PDO | Lifting Facial Minimamente Invasivo</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
@@ -19,21 +19,8 @@
             darkMode: "class",
             theme: {
                 extend: {
-                    colors: {
-                        "primary": "#d4af35",
-                        "background-light": "#f8f7f6",
-                        "background-dark": "#121212",
-                        "surface-light": "#ffffff",
-                        "surface-dark": "#1a1a1a",
-                        "text-light": "#333333",
-                        "text-dark": "#f3f4f6",
-                        "muted-light": "#666666",
-                        "muted-dark": "#999999",
-                    },
-                    fontFamily: {
-                        "display": ["Playfair Display", "serif"],
-                        "body": ["Montserrat", "sans-serif"]
-                    },
+                    colors: { "primary": "#d4af35", "background-light": "#f8f7f6", "background-dark": "#121212", "surface-light": "#ffffff", "surface-dark": "#1a1a1a", "text-light": "#333333", "text-dark": "#f3f4f6", "muted-light": "#666666", "muted-dark": "#999999" },
+                    fontFamily: { "display": ["Playfair Display", "serif"], "body": ["Montserrat", "sans-serif"] },
                 },
             },
         }
@@ -47,45 +34,32 @@
         html {
             scroll-behavior: smooth;
         }
-
-        .hero-overlay {
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), transparent);
-        }
     </style>
 </head>
 
 <body
     class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body antialiased transition-colors duration-300">
-    <!-- Navbar (Injected) -->
+    <!-- Navbar -->
     <nav x-data="{ scrolled: false, mobileMenuOpen: false }" @scroll.window="scrolled = (window.pageYOffset > 20)"
         :class="{ 'bg-background-dark/95 shadow-md border-b border-gray-800': scrolled, 'bg-transparent border-transparent': !scrolled }"
         class="fixed w-full z-50 transition-all duration-500 ease-in-out">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <a class="font-display text-2xl tracking-widest text-white font-medium flex items-center gap-2 group"
-                        href="index.html">
-                        <img src="assets/logo/logo1.png" alt="Lara Pires Logo"
-                            class="h-20 w-auto object-contain brightness-0 invert group-hover:brightness-100 transition-all duration-300">
-                    </a>
+                <div class="flex-shrink-0 flex items-center"><a
+                        class="font-display text-2xl tracking-widest text-white font-medium flex items-center gap-2 group"
+                        href="index.html"><img src="assets/logo/logo1.png" alt="Lara Pires Logo"
+                            class="h-20 w-auto object-contain brightness-0 invert group-hover:brightness-100 transition-all duration-300"></a>
                 </div>
-
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <!-- Dropdown for Procedimentos -->
                     <div class="relative group py-6 -my-6">
                         <button
-                            class="text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors flex items-center gap-1 focus:outline-none">
-                            Procedimentos
+                            class="text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors flex items-center gap-1 focus:outline-none">Procedimentos
                             <span
-                                class="material-icons-outlined text-sm transition-transform duration-300 group-hover:rotate-180">expand_more</span>
-                        </button>
-                        <!-- Dropdown Menu -->
+                                class="material-icons-outlined text-sm transition-transform duration-300 group-hover:rotate-180">expand_more</span></button>
                         <div
                             class="absolute left-0 top-full -mt-2 w-64 bg-[#1A1A1A]/95 backdrop-blur-md border border-gray-800 shadow-xl py-2 rounded-sm transform origin-top opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                             <a href="blefaroplastia.html"
-                                class="block px-6 py-3 text-xs text-primary bg-white/5 transition-colors uppercase tracking-wide">Blefaroplastia</a>
+                                class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Blefaroplastia</a>
                             <a href="peeling-quimico.html"
                                 class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Peeling
                                 Químico</a>
@@ -95,13 +69,12 @@
                             <a href="bioestimuladores.html"
                                 class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Bioestimuladores</a>
                             <a href="fios-de-pdo.html"
-                                class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Fios
+                                class="block px-6 py-3 text-xs text-primary bg-white/5 transition-colors uppercase tracking-wide">Fios
                                 de PDO</a>
                             <a href="microagulhamento.html"
                                 class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Microagulhamento</a>
                         </div>
                     </div>
-
                     <a class="text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors"
                         href="index.html#about">Nosso Espaço</a>
                     <a class="text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors"
@@ -109,21 +82,11 @@
                     <a class="text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors"
                         href="index.html#blog">Blog</a>
                 </div>
-
-                <!-- CTA Button -->
-                <div class="hidden md:block">
-                    <a href="index.html#contact"
-                        class="px-6 py-3 bg-primary text-surface-dark text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-white transition-colors">
-                        Agendar Avaliação
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden">
-                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-white hover:text-primary focus:outline-none p-2">
-                        <span class="material-icons-outlined" x-text="mobileMenuOpen ? 'close' : 'menu'">menu</span>
-                    </button>
-                </div>
+                <div class="hidden md:block"><a href="index.html#contact"
+                        class="px-6 py-3 bg-primary text-surface-dark text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-white transition-colors">Agendar
+                        Avaliação</a></div>
+                <div class="md:hidden"><button class="text-white hover:text-primary focus:outline-none"><span
+                            class="material-icons-outlined">menu</span></button></div>
             </div>
         </div>
 
@@ -161,7 +124,6 @@
             </div>
         </div>
     </nav>
-    <!-- CSS Noise Overlay -->
     <svg class="pointer-events-none fixed inset-0 z-50 h-[100dvh] w-full opacity-[0.05]"
         xmlns="http://www.w3.org/2000/svg">
         <filter id="noiseFilter">
@@ -170,27 +132,25 @@
         <rect width="100%" height="100%" filter="url(#noiseFilter)" />
     </svg>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <header class="relative h-[100dvh] w-full flex items-end justify-start overflow-hidden pb-32 px-6 lg:px-24">
         <div class="absolute inset-0 z-0">
-            <img alt="Blefaroplastia - Dra. Lara Pires"
-                class="w-full h-full object-cover object-top md:object-[center_25%]"
-                data-alt="Imagem de destaque procedimento estético" src="assets/hero-image.jpeg" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
-            </div>
+            <img alt="Fios de PDO - Dra. Lara Pires"
+                class="w-full h-full object-cover object-top md:object-[center_25%]" src="assets/hero-image.jpeg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
         </div>
         <div class="relative z-10 w-full max-w-4xl hero-content">
             <h1 class="flex flex-col gap-2">
                 <span
-                    class="font-body font-bold text-4xl md:text-6xl text-white tracking-tight hero-text opacity-0 translate-y-10">Excelência
-                    Médica encontra a</span>
+                    class="font-body font-bold text-4xl md:text-6xl text-white tracking-tight hero-text opacity-0 translate-y-10">Sustentação
+                    Natural encontra a</span>
                 <span
-                    class="font-display italic text-6xl md:text-8xl text-primary hero-text opacity-0 translate-y-10">Blefaroplastia.</span>
+                    class="font-display italic text-6xl md:text-8xl text-primary hero-text opacity-0 translate-y-10">Tecnologia.</span>
             </h1>
             <p
                 class="text-lg md:text-xl text-slate-300 font-light mt-8 mb-10 tracking-wide max-w-2xl hero-text opacity-0 translate-y-10">
-                O despertar de um olhar jovem, descansado e natural. Restaure a firmeza das pálpebras com precisão
-                cirúrgica de alto padrão.
+                Lifting facial sem cirurgia. Fios biodegradáveis que sustentam, redefinem contornos e estimulam colágeno
+                para um rejuvenescimento natural e duradouro.
             </p>
             <div class="flex flex-col sm:flex-row gap-6 hero-text opacity-0 translate-y-10">
                 <a class="relative overflow-hidden group bg-primary text-background-dark font-bold py-4 px-8 rounded-full transition-all duration-500 hover:scale-[1.03] text-sm uppercase tracking-widest text-center shadow-lg"
@@ -202,254 +162,157 @@
                 </a>
             </div>
         </div>
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/40">
-            <span class="material-icons-outlined">expand_more</span>
-        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/40"><span
+                class="material-icons-outlined">expand_more</span></div>
     </header>
 
-    <!-- Patient Journey Section -->
+    <!-- Journey -->
     <section class="py-32 px-6 lg:px-24 bg-background-light" id="procedimento">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-20">
                 <h2 class="font-body font-bold text-sm uppercase tracking-[0.3em] text-primary mb-4">Sua Jornada</h2>
-                <h3 class="text-4xl md:text-5xl font-display text-text-light tracking-tight">Do primeiro contato ao novo
-                    olhar.</h3>
+                <h3 class="text-4xl md:text-5xl font-display text-text-light tracking-tight">Do primeiro contato à
+                    sustentação revitalizada.</h3>
             </div>
-
             <div class="relative">
-                <!-- Connecting Line (Desktop) -->
                 <div
                     class="hidden md:block absolute top-28 left-[16.66%] right-[16.66%] h-[2px] bg-gradient-to-r from-primary/10 via-primary/40 to-primary/10 z-0">
                 </div>
-
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 relative z-10">
-
-                    <!-- Step 1: Consulta -->
                     <div class="journey-step flex flex-col items-center text-center group">
                         <div
                             class="w-20 h-20 rounded-full bg-white border-2 border-primary/20 flex items-center justify-center mb-8 shadow-lg group-hover:shadow-xl group-hover:border-primary/60 transition-all duration-500 group-hover:scale-105">
-                            <span class="material-icons-outlined text-primary text-3xl">event_note</span>
-                        </div>
+                            <span class="material-icons-outlined text-primary text-3xl">event_note</span></div>
                         <span class="font-mono text-primary text-xs tracking-[0.3em] uppercase mb-3">Etapa 01</span>
-                        <h4 class="font-body font-bold text-2xl text-text-light mb-4">Consulta</h4>
-                        <p class="text-gray-500 leading-relaxed text-[15px] max-w-xs">
-                            Avaliação detalhada da estrutura palpebral, análise fotográfica e planejamento personalizado
-                            do seu procedimento.
-                        </p>
-                        <div class="mt-6 pt-6 border-t border-gray-200 w-full">
-                            <span class="text-xs text-gray-400 uppercase tracking-widest">Duração: ~45 min</span>
-                        </div>
+                        <h4 class="font-body font-bold text-2xl text-text-light mb-4">Avaliação</h4>
+                        <p class="text-gray-500 leading-relaxed text-[15px] max-w-xs">Mapeamento dos vetores de tração
+                            facial, análise da flacidez e escolha do tipo de fio ideal para cada região do rosto.</p>
+                        <div class="mt-6 pt-6 border-t border-gray-200 w-full"><span
+                                class="text-xs text-gray-400 uppercase tracking-widest">Duração: ~40 min</span></div>
                     </div>
-
-                    <!-- Step 2: Procedimento -->
                     <div class="journey-step flex flex-col items-center text-center group">
                         <div
                             class="w-20 h-20 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center mb-8 shadow-lg group-hover:shadow-xl group-hover:bg-primary/20 transition-all duration-500 group-hover:scale-105">
-                            <span class="material-icons-outlined text-primary text-3xl">auto_fix_high</span>
-                        </div>
+                            <span class="material-icons-outlined text-primary text-3xl">architecture</span></div>
                         <span class="font-mono text-primary text-xs tracking-[0.3em] uppercase mb-3">Etapa 02</span>
-                        <h4 class="font-body font-bold text-2xl text-text-light mb-4">Procedimento</h4>
-                        <p class="text-gray-500 leading-relaxed text-[15px] max-w-xs">
-                            Cirurgia com anestesia local e sedação. Incisões precisas nas dobras naturais, garantindo
-                            cicatrizes imperceptíveis.
-                        </p>
-                        <div class="mt-6 pt-6 border-t border-gray-200 w-full">
-                            <span class="text-xs text-gray-400 uppercase tracking-widest">Duração: 1–2 horas</span>
-                        </div>
+                        <h4 class="font-body font-bold text-2xl text-text-light mb-4">Implantação</h4>
+                        <p class="text-gray-500 leading-relaxed text-[15px] max-w-xs">Inserção dos fios de polidioxanona
+                            com anestesia local. Os fios criam uma estrutura de sustentação que traciona e reposiciona
+                            os tecidos faciais.</p>
+                        <div class="mt-6 pt-6 border-t border-gray-200 w-full"><span
+                                class="text-xs text-gray-400 uppercase tracking-widest">Duração: 40–90 min</span></div>
                     </div>
-
-                    <!-- Step 3: Resultado -->
                     <div class="journey-step flex flex-col items-center text-center group">
                         <div
                             class="w-20 h-20 rounded-full bg-white border-2 border-primary/20 flex items-center justify-center mb-8 shadow-lg group-hover:shadow-xl group-hover:border-primary/60 transition-all duration-500 group-hover:scale-105">
-                            <span class="material-icons-outlined text-primary text-3xl">visibility</span>
-                        </div>
+                            <span class="material-icons-outlined text-primary text-3xl">auto_awesome</span></div>
                         <span class="font-mono text-primary text-xs tracking-[0.3em] uppercase mb-3">Etapa 03</span>
                         <h4 class="font-body font-bold text-2xl text-text-light mb-4">Resultado</h4>
-                        <p class="text-gray-500 leading-relaxed text-[15px] max-w-xs">
-                            Olhar renovado e natural em poucas semanas. Retorno social em 7 dias com acompanhamento
-                            contínuo da equipe.
-                        </p>
-                        <div class="mt-6 pt-6 border-t border-gray-200 w-full">
-                            <span class="text-xs text-gray-400 uppercase tracking-widest">Recuperação: 7–14 dias</span>
+                        <p class="text-gray-500 leading-relaxed text-[15px] max-w-xs">Efeito lifting imediato com
+                            melhora progressiva ao longo de meses. Os fios são absorvidos em ~6 meses, mas o colágeno
+                            formado mantém os resultados por até 18 meses.</p>
+                        <div class="mt-6 pt-6 border-t border-gray-200 w-full"><span
+                                class="text-xs text-gray-400 uppercase tracking-widest">Duração: até 18 meses</span>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
-    <!-- Philosophy Section -->
+
+    <!-- Philosophy -->
     <section class="py-40 px-6 lg:px-24 bg-surface-light relative overflow-hidden flex items-center min-h-[70vh]">
-        <!-- Organic Texture Parallax -->
         <div class="absolute inset-0 z-0 opacity-10 parallax-bg"
             style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80'); background-size: cover; background-position: center; transform: scale(1.2);">
         </div>
-
         <div class="max-w-5xl mx-auto relative z-10 flex flex-col gap-8">
-            <p class="text-xl md:text-2xl text-gray-500 font-light max-w-2xl split-text-1">
-                A maioria das clínicas foca apenas na remoção de tecido.
-            </p>
-            <h2 class="text-4xl md:text-7xl font-display italic text-text-light leading-tight split-text-2">
-                Nós focamos no <span class="text-primary">reposicionamento estrutural</span> do seu olhar.
-            </h2>
+            <p class="text-xl md:text-2xl text-gray-500 font-light max-w-2xl split-text-1">A maioria acredita que
+                lifting facial exige bisturi.</p>
+            <h2 class="text-4xl md:text-7xl font-display italic text-text-light leading-tight split-text-2">Nós focamos
+                na <span class="text-primary">sustentação minimamente invasiva</span> dos seus tecidos.</h2>
         </div>
     </section>
 
-    <!-- Protocol Stacking Archive -->
+    <!-- Protocol -->
     <section class="bg-background-light py-24" id="protocol">
         <div class="max-w-7xl mx-auto px-6 lg:px-24 mb-16">
             <h2 class="font-body font-bold text-sm uppercase tracking-[0.3em] text-primary mb-4">Metodologia</h2>
-            <h3 class="text-4xl md:text-5xl font-display text-text-light">O Protocolo Cirúrgico</h3>
+            <h3 class="text-4xl md:text-5xl font-display text-text-light">O Protocolo de Sustentação</h3>
         </div>
-
-        <div class="protocol-container relative pb-[10vh]"> <!-- Space for pinning -->
-
-            <!-- Card 1 -->
+        <div class="protocol-container relative pb-[10vh]">
             <div
                 class="protocol-card w-full h-[80vh] sticky top-24 flex items-center justify-center p-6 transition-all duration-500 will-change-transform">
                 <div
                     class="w-full max-w-5xl h-full bg-surface-light rounded-[3rem] border border-gray-200 shadow-xl overflow-hidden flex flex-col md:flex-row relative">
                     <div class="md:w-1/2 p-12 md:p-20 flex flex-col justify-center relative z-10 w-full h-full">
                         <span class="font-mono text-primary text-xl mb-6">01</span>
-                        <h4 class="font-body font-bold text-3xl md:text-4xl text-text-light mb-6">Pálpebra Superior</h4>
-                        <p class="text-lg text-gray-600 leading-relaxed">
-                            Remoção cuidadosa do excesso de pele e pequenas bolsas de gordura. A incisão é
-                            matematicamente posicionada na dobra natural do olho, tornando a cicatriz imperceptível.
-                        </p>
+                        <h4 class="font-body font-bold text-3xl md:text-4xl text-text-light mb-6">Fios Lisos</h4>
+                        <p class="text-lg text-gray-600 leading-relaxed">Indicados para estimulação de colágeno e
+                            melhora da qualidade da pele. Inseridos em malha para criar uma rede de sustentação que
+                            firma e rejuvenesce os tecidos de forma gradual.</p>
                     </div>
-                    <div class="md:w-1/2 relative overflow-hidden">
-                        <img src="assets/protocol-palpebra-superior.png" alt="Procedimento Pálpebra Superior"
-                            class="w-full h-full object-cover" />
-                    </div>
+                    <div class="md:w-1/2 relative overflow-hidden"><img src="assets/protocol-fios-lisos.png" alt="Fios Lisos"
+                            class="w-full h-full object-cover" /></div>
                 </div>
             </div>
-
-            <!-- Card 2 -->
             <div
                 class="protocol-card w-full h-[80vh] sticky top-28 flex items-center justify-center p-6 transition-all duration-500 will-change-transform">
                 <div
                     class="w-full max-w-5xl h-full bg-white rounded-[3rem] border border-gray-200 shadow-xl overflow-hidden flex flex-col md:flex-row relative">
                     <div class="md:w-1/2 p-12 md:p-20 flex flex-col justify-center relative z-10 w-full h-full">
                         <span class="font-mono text-primary text-xl mb-6">02</span>
-                        <h4 class="font-body font-bold text-3xl md:text-4xl text-text-light mb-6">Pálpebra Inferior</h4>
-                        <p class="text-lg text-gray-600 leading-relaxed">
-                            Tratamento das bolsas de gordura. Muitas vezes realizado pela técnica transconjuntival,
-                            garantindo a ausência total de cicatrizes externas e recuperação relâmpago.
-                        </p>
+                        <h4 class="font-body font-bold text-3xl md:text-4xl text-text-light mb-6">Fios Espiculados</h4>
+                        <p class="text-lg text-gray-600 leading-relaxed">Possuem garras microscópicas que ancoram nos
+                            tecidos, proporcionando um efeito lifting imediato e sustentado. Ideais para tratar flacidez
+                            moderada em mandíbula, papada e maçãs do rosto.</p>
                     </div>
-                    <div class="md:w-1/2 relative overflow-hidden">
-                        <img src="assets/protocol-palpebra-inferior.png" alt="Procedimento Pálpebra Inferior"
-                            class="w-full h-full object-cover" />
-                    </div>
+                    <div class="md:w-1/2 relative overflow-hidden"><img src="assets/protocol-fios-espiculados.png"
+                            alt="Fios Espiculados" class="w-full h-full object-cover" /></div>
                 </div>
             </div>
-
-            <!-- Card 3 -->
             <div
                 class="protocol-card w-full h-[80vh] sticky top-32 flex items-center justify-center p-6 transition-all duration-500 will-change-transform">
                 <div
                     class="w-full max-w-5xl h-full bg-gray-50 rounded-[3rem] border border-gray-200 shadow-xl overflow-hidden flex flex-col md:flex-row relative">
                     <div class="md:w-1/2 p-12 md:p-20 flex flex-col justify-center relative z-10 w-full h-full">
                         <span class="font-mono text-primary text-xl mb-6">03</span>
-                        <h4 class="font-body font-bold text-3xl md:text-4xl text-text-light mb-6">Recuperação Assistida
+                        <h4 class="font-body font-bold text-3xl md:text-4xl text-text-light mb-6">Recuperação & Cuidados
                         </h4>
-                        <p class="text-lg text-gray-600 leading-relaxed">
-                            Acompanhamento contínuo no pós-operatório estruturado para garantir cicatrização acelerada,
-                            minimizando edema e equimose.
-                        </p>
+                        <p class="text-lg text-gray-600 leading-relaxed">Pode ocorrer leve inchaço ou hematoma nas
+                            primeiras 48 horas. Evitar esforço físico intenso e dormir de lado por 1 a 2 semanas. Os
+                            fios são 100% absorvíveis e biocompatíveis.</p>
                     </div>
-                    <div class="md:w-1/2 relative overflow-hidden">
-                        <img src="assets/protocol-recuperacao.png" alt="Recuperação Assistida"
-                            class="w-full h-full object-cover" />
-                    </div>
+                    <div class="md:w-1/2 relative overflow-hidden"><img src="assets/protocol-fios-recuperacao.png" alt="Recuperação"
+                            class="w-full h-full object-cover" /></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Before & After Section -->
+    <!-- Before & After -->
     <section class="py-24 px-6 bg-background-light border-t border-gray-200">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-display text-text-light mb-4 tracking-tight">Registro Clínico</h2>
                 <p class="text-gray-500 font-light max-w-2xl mx-auto">Resultados reais alcançados com o nosso protocolo
-                    de Blefaroplastia.</p>
+                    de Fios de PDO.</p>
             </div>
-
-            <div x-data="{ 
-                activeSlide: 1, 
-                slides: [
-                    'assets/antes e depois/blefaroplastia/antes e depois 1.jpeg',
-                    'assets/antes e depois/blefaroplastia/antes e depois 2.jpeg',
-                    'assets/antes e depois/blefaroplastia/antes e depois 3.jpeg'
-                ],
-                position: 50,
-                isAnimating: false,
-                isPrev(index) {
-                    let len = this.slides.length;
-                    return (this.activeSlide === 1 && index + 1 === len) || (this.activeSlide !== 1 && index + 1 === this.activeSlide - 1);
-                },
-                isNext(index) {
-                    let len = this.slides.length;
-                    return (this.activeSlide === len && index + 1 === 1) || (this.activeSlide !== len && index + 1 === this.activeSlide + 1);
-                },
-                animateSlider() {
-                    this.isAnimating = false;
-                    this.position = 50;
-                    setTimeout(() => {
-                        this.isAnimating = true;
-                        this.position = 0; 
-                        setTimeout(() => {
-                            this.position = 50; 
-                            setTimeout(() => {
-                                this.isAnimating = false; 
-                            }, 700);
-                        }, 700);
-                    }, 50); 
-                },
-                init() {
-                    setTimeout(() => this.animateSlider(), 500);
-                    this.$watch('activeSlide', () => {
-                        this.animateSlider();
-                    });
-                }
-            }"
+            <div x-data="{ activeSlide: 1, slides: ['assets/antes e depois/fios-de-pdo/antes e depois 1.jpeg','assets/antes e depois/fios-de-pdo/antes e depois 2.jpeg','assets/antes e depois/fios-de-pdo/antes e depois 3.jpeg'], position: 50, isAnimating: false, isPrev(index) { let len = this.slides.length; return (this.activeSlide === 1 && index + 1 === len) || (this.activeSlide !== 1 && index + 1 === this.activeSlide - 1); }, isNext(index) { let len = this.slides.length; return (this.activeSlide === len && index + 1 === 1) || (this.activeSlide !== len && index + 1 === this.activeSlide + 1); }, animateSlider() { this.isAnimating = false; this.position = 50; setTimeout(() => { this.isAnimating = true; this.position = 0; setTimeout(() => { this.position = 50; setTimeout(() => { this.isAnimating = false; }, 700); }, 700); }, 50); }, init() { setTimeout(() => this.animateSlider(), 500); this.$watch('activeSlide', () => { this.animateSlider(); }); } }"
                 class="relative w-full h-[55vh] min-h-[450px] max-h-[600px] flex items-center justify-center mt-12 mb-12 overflow-hidden">
-
-                <!-- Slides Loop -->
                 <template x-for="(slide, index) in slides" :key="index">
-                    <!-- Individual Card Wrapper -->
                     <div class="absolute w-[75vw] max-w-[320px] md:max-w-[400px] lg:max-w-[450px] aspect-[4/5] transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] rounded-[2rem] shadow-[0_20px_40px_rgba(0,0,0,0.15)] overflow-hidden bg-white border border-gray-100/50 isolation-isolate transform-gpu"
-                        :class="{
-                             'z-30 scale-100 translate-x-0 opacity-100': activeSlide === index + 1,
-                             'z-20 scale-75 md:scale-80 -translate-x-[45%] md:-translate-x-[55%] opacity-40 cursor-pointer hover:opacity-70 hover:scale-[0.82]': isPrev(index),
-                             'z-20 scale-75 md:scale-80 translate-x-[45%] md:translate-x-[55%] opacity-40 cursor-pointer hover:opacity-70 hover:scale-[0.82]': isNext(index),
-                             'z-10 scale-50 opacity-0 pointer-events-none': activeSlide !== index + 1 && !isPrev(index) && !isNext(index)
-                         }" @click="if(isPrev(index) || isNext(index)) { activeSlide = index + 1; }">
-                        <!-- Depois Image (Right Side) -->
-                        <div class="absolute top-0 left-0 w-[200%] h-full -translate-x-1/2 pointer-events-none">
-                            <img :src="slide" alt="Depois"
-                                class="w-full h-full object-cover object-center select-none" />
-                        </div>
-
-                        <!-- Antes Image (Left Side) -->
+                        :class="{ 'z-30 scale-100 translate-x-0 opacity-100': activeSlide === index + 1, 'z-20 scale-75 md:scale-80 -translate-x-[45%] md:-translate-x-[55%] opacity-40 cursor-pointer hover:opacity-70 hover:scale-[0.82]': isPrev(index), 'z-20 scale-75 md:scale-80 translate-x-[45%] md:translate-x-[55%] opacity-40 cursor-pointer hover:opacity-70 hover:scale-[0.82]': isNext(index), 'z-10 scale-50 opacity-0 pointer-events-none': activeSlide !== index + 1 && !isPrev(index) && !isNext(index) }"
+                        @click="if(isPrev(index) || isNext(index)) { activeSlide = index + 1; }">
+                        <div class="absolute top-0 left-0 w-[200%] h-full -translate-x-1/2 pointer-events-none"><img
+                                :src="slide" alt="Depois"
+                                class="w-full h-full object-cover object-center select-none" /></div>
                         <div class="absolute top-0 left-0 w-[200%] h-full pointer-events-none transition-opacity duration-500"
-                            :class="{ 
-                                'opacity-100': activeSlide === index + 1,
-                                'opacity-0': activeSlide !== index + 1
-                            }"
+                            :class="{ 'opacity-100': activeSlide === index + 1, 'opacity-0': activeSlide !== index + 1 }"
                             :style="`clip-path: polygon(0 0, ${position / 2}% 0, ${position / 2}% 100%, 0 100%); ${isAnimating ? 'transition: clip-path 0.7s ease-in-out, opacity 0.5s;' : ''}`">
                             <img :src="slide" alt="Antes"
-                                class="w-full h-full object-cover object-center select-none" />
-                        </div>
-
-                        <!-- Slider Handle -->
+                                class="w-full h-full object-cover object-center select-none" /></div>
                         <div class="absolute top-0 bottom-0 w-1 bg-white shadow-[0_0_10px_rgba(0,0,0,0.3)] z-20 pointer-events-none transition-opacity duration-500"
-                            :class="{ 
-                                'opacity-100': activeSlide === index + 1,
-                                'opacity-0': activeSlide !== index + 1
-                            }"
+                            :class="{ 'opacity-100': activeSlide === index + 1, 'opacity-0': activeSlide !== index + 1 }"
                             :style="`left: calc(${position}%); ${isAnimating ? 'transition: left 0.7s ease-in-out, opacity 0.5s;' : ''}`">
                             <div
                                 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-[0_0_20px_rgba(0,0,0,0.3)] flex items-center justify-center border border-gray-100">
@@ -457,141 +320,111 @@
                                     stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                                         d="M8 9l4-4 4 4m0 6l-4 4-4-4" transform="rotate(90 12 12)" />
-                                </svg>
-                            </div>
+                                </svg></div>
                         </div>
-
-                        <!-- Invisible Range Input -->
                         <input x-show="activeSlide === index + 1" type="range" min="0" max="100" x-model="position"
                             class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30 m-0"
                             :class="{ 'transition-all duration-700 ease-in-out': isAnimating }" />
-
-                        <!-- Labels -->
                         <div class="absolute bottom-6 md:bottom-10 left-6 md:left-8 bg-black/60 backdrop-blur-md text-white text-[9px] md:text-sm uppercase font-mono px-4 py-2 rounded-full pointer-events-none transition-opacity duration-300 border border-white/10 z-20"
                             :class="position < 15 ? 'opacity-0' : 'opacity-100'">Antes</div>
                         <div class="absolute bottom-6 md:bottom-10 right-6 md:right-8 bg-primary/90 backdrop-blur-md text-background-light text-[9px] md:text-sm font-bold uppercase font-mono px-4 py-2 rounded-full shadow-xl pointer-events-none transition-opacity duration-300 z-20"
                             :class="position > 85 ? 'opacity-0' : 'opacity-100'">Depois</div>
                     </div>
                 </template>
-
-                <!-- Navigation Dots -->
                 <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 flex items-center justify-center gap-3 z-40">
-                    <template x-for="(slide, index) in slides" :key="index">
-                        <button @click="activeSlide = index + 1"
+                    <template x-for="(slide, index) in slides" :key="index"><button @click="activeSlide = index + 1"
                             class="h-2 rounded-full transition-all duration-500 focus:outline-none shadow-sm"
-                            :class="activeSlide === index + 1 ? 'w-10 bg-primary' : 'w-2 bg-gray-300 hover:bg-gray-400'"></button>
-                    </template>
+                            :class="activeSlide === index + 1 ? 'w-10 bg-primary' : 'w-2 bg-gray-300 hover:bg-gray-400'"></button></template>
                 </div>
             </div>
-
-            <p class="text-center text-xs text-gray-400 mt-12 font-mono">
-                *CÓDIGO DE ÉTICA MÉDICA: Resultados ilustrativos. A anatomia humana é individual.
-            </p>
+            <p class="text-center text-xs text-gray-400 mt-12 font-mono">*CÓDIGO DE ÉTICA MÉDICA: Resultados
+                ilustrativos. A anatomia humana é individual.</p>
         </div>
     </section>
 
-    <!-- FAQ Section (Alpine) -->
+    <!-- FAQ -->
     <section class="py-24 px-6 lg:px-24 bg-surface-light border-t border-gray-200">
         <div class="max-w-3xl mx-auto">
             <h2 class="text-4xl font-display text-text-light mb-16 text-center tracking-tight">Informações Auxiliares
             </h2>
             <div class="space-y-4" x-data="{ activeAccordion: null }">
-
-                <!-- FAQ 1 -->
                 <div
                     class="border border-gray-200 rounded-[1.5rem] overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
                     <button @click="activeAccordion = activeAccordion === 1 ? null : 1"
                         class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors focus:outline-none">
-                        <span class="text-lg font-body text-gray-800 font-medium">Qual é o tipo de anestesia
-                            utilizada?</span>
+                        <span class="text-lg font-body text-gray-800 font-medium">O procedimento dói?</span>
                         <span class="material-icons-outlined text-primary text-xl transition-transform duration-300"
                             :class="{'rotate-45': activeAccordion === 1}">add</span>
                     </button>
                     <div x-show="activeAccordion === 1" x-collapse x-cloak>
                         <div
                             class="px-6 pb-6 pt-2 text-md text-gray-600 font-light leading-relaxed border-t border-gray-100">
-                            Na maioria dos casos, a blefaroplastia é realizada sob anestesia local com sedação
-                            intravenosa, garantindo conforto total durante o procedimento e uma recuperação mais rápida
-                            sem os efeitos severos da anestesia geral.
-                        </div>
+                            O procedimento é realizado com anestesia local, garantindo conforto durante toda a
+                            aplicação. Pode haver leve desconforto nos primeiros dias, controlado com analgésicos
+                            comuns.</div>
                     </div>
                 </div>
-
-                <!-- FAQ 2 -->
                 <div
                     class="border border-gray-200 rounded-[1.5rem] overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
                     <button @click="activeAccordion = activeAccordion === 2 ? null : 2"
                         class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors focus:outline-none">
-                        <span class="text-lg font-body text-gray-800 font-medium">As cicatrizes ficam visíveis?</span>
+                        <span class="text-lg font-body text-gray-800 font-medium">Os fios são permanentes?</span>
                         <span class="material-icons-outlined text-primary text-xl transition-transform duration-300"
                             :class="{'rotate-45': activeAccordion === 2}">add</span>
                     </button>
                     <div x-show="activeAccordion === 2" x-collapse x-cloak>
                         <div
                             class="px-6 pb-6 pt-2 text-md text-gray-600 font-light leading-relaxed border-t border-gray-100">
-                            As incisões são planejadas meticulosamente. Na pálpebra superior, a linha fica escondida no
-                            sulco natural. Na inferior, fazemos logo abaixo dos cílios ou via transconjuntival (por
-                            dentro da pálpebra), não deixando cicatriz externa visível.
-                        </div>
+                            Não. Os fios de PDO são 100% biodegradáveis e absorvíveis pelo organismo em aproximadamente
+                            6 meses. Porém, o colágeno produzido ao redor dos fios mantém os resultados por até 18
+                            meses.</div>
                     </div>
                 </div>
-
-                <!-- FAQ 3 -->
                 <div
                     class="border border-gray-200 rounded-[1.5rem] overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
                     <button @click="activeAccordion = activeAccordion === 3 ? null : 3"
                         class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors focus:outline-none">
-                        <span class="text-lg font-body text-gray-800 font-medium">Como é a recuperação e quando volto a
-                            trabalhar?</span>
+                        <span class="text-lg font-body text-gray-800 font-medium">Quem pode fazer o procedimento?</span>
                         <span class="material-icons-outlined text-primary text-xl transition-transform duration-300"
                             :class="{'rotate-45': activeAccordion === 3}">add</span>
                     </button>
                     <div x-show="activeAccordion === 3" x-collapse x-cloak>
                         <div
                             class="px-6 pb-6 pt-2 text-md text-gray-600 font-light leading-relaxed border-t border-gray-100">
-                            A recuperação primária leva de 7 a 10 dias. Neste período o edema e os hematomas diminuem
-                            significativamente. A maioria dos pacientes retorna a um trabalho que não exija esforço
-                            físico após uma semana.
-                        </div>
+                            O procedimento é indicado para adultos que desejam melhorar a flacidez facial e corporal. É
+                            contraindicado para gestantes, lactantes, pessoas com doenças autoimunes, problemas de
+                            coagulação ou infecções ativas na pele.</div>
                     </div>
                 </div>
-
-                <!-- FAQ 4 -->
                 <div
                     class="border border-gray-200 rounded-[1.5rem] overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
                     <button @click="activeAccordion = activeAccordion === 4 ? null : 4"
                         class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors focus:outline-none">
-                        <span class="text-lg font-body text-gray-800 font-medium">Posso combinar a Blefaroplastia com o
-                            Lifting
-                            (Full Face)?</span>
+                        <span class="text-lg font-body text-gray-800 font-medium">Como é a recuperação?</span>
                         <span class="material-icons-outlined text-primary text-xl transition-transform duration-300"
                             :class="{'rotate-45': activeAccordion === 4}">add</span>
                     </button>
                     <div x-show="activeAccordion === 4" x-collapse x-cloak>
                         <div
                             class="px-6 pb-6 pt-2 text-md text-gray-600 font-light leading-relaxed border-t border-gray-100">
-                            Sim, é extremamente comum e altamente recomendado para pacientes que buscam um
-                            rejuvenescimento global da face. A combinação otimiza o tempo cirúrgico e unifica o período
-                            de recuperação.
-                        </div>
+                            Pode ocorrer inchaço ou hematomas leves nas primeiras 24 a 48 horas. Recomenda-se evitar
+                            esfregar o rosto, fumar, dormir de lado e praticar exercícios intensos por 1 a 2 semanas
+                            após o procedimento.</div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Footer CTA -->
+    <!-- Footer -->
     <footer class="py-32 px-6 bg-background-light border-t border-gray-200 text-center">
         <div class="max-w-xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-display text-text-light mb-6 tracking-tight">Pronto para redefinir o
-                seu
-                olhar?</h2>
-            <p class="text-gray-500 mb-12 font-light text-lg">
-                Agende sua avaliação personalizada com a Dra. Lara Pires e descubra a precisão do nosso protocolo.
-            </p>
+            <h2 class="text-4xl md:text-5xl font-display text-text-light mb-6 tracking-tight">Pronta para redefinir os
+                contornos do seu rosto?</h2>
+            <p class="text-gray-500 mb-12 font-light text-lg">Agende sua avaliação personalizada com a Dra. Lara Pires e
+                descubra a precisão do nosso protocolo.</p>
             <a class="relative inline-block overflow-hidden group bg-primary text-white font-bold py-5 px-12 rounded-full transition-all duration-500 hover:scale-[1.03] text-sm uppercase tracking-widest text-center shadow-lg"
-                href="https://wa.me/5561998399551" id="consultation" target="_blank">
+                href="https://wa.me/5561998399551" target="_blank">
                 <span class="relative z-10 group-hover:text-background-light transition-colors duration-500">Agendar
                     Avaliação</span>
                 <span
@@ -607,109 +440,41 @@
                         class="text-gray-400 hover:text-primary transition-colors cursor-pointer material-icons-outlined">room</a>
                 </div>
                 <div class="flex items-center gap-2 mt-4">
-                    <span class="relative flex h-2 w-2">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                    </span>
-                    <p class="text-[10px] text-gray-500 uppercase tracking-widest font-mono">
-                        System Operational • CRM 000.000 / RQE 0000
-                    </p>
+                    <span class="relative flex h-2 w-2"><span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span><span
+                            class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span></span>
+                    <p class="text-[10px] text-gray-500 uppercase tracking-widest font-mono">System Operational • CRM
+                        000.000 / RQE 0000</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- GSAP Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             gsap.registerPlugin(ScrollTrigger);
-
             let ctx = gsap.context(() => {
-
-                // Hero Animation
-                gsap.to('.hero-text', {
-                    y: 0,
-                    opacity: 1,
-                    duration: 1.2,
-                    stagger: 0.15,
-                    ease: "power3.out",
-                    delay: 0.2
-                });
-
-                // Philosophy Parallax & Reveal
-                gsap.to('.parallax-bg', {
-                    yPercent: 20,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: ".parallax-bg",
-                        start: "top bottom",
-                        end: "bottom top",
-                        scrub: true
-                    }
-                });
-
-                gsap.from('.split-text-1', {
-                    y: 30, opacity: 0, duration: 1, ease: "power3.out",
-                    scrollTrigger: { trigger: '.split-text-1', start: "top 80%" }
-                });
-                gsap.from('.split-text-2', {
-                    y: 40, opacity: 0, duration: 1, delay: 0.2, ease: "power3.out",
-                    scrollTrigger: { trigger: '.split-text-2', start: "top 80%" }
-                });
-
-                // Protocol Stacking Archive
+                gsap.to('.hero-text', { y: 0, opacity: 1, duration: 1.2, stagger: 0.15, ease: "power3.out", delay: 0.2 });
+                gsap.to('.parallax-bg', { yPercent: 20, ease: "none", scrollTrigger: { trigger: ".parallax-bg", start: "top bottom", end: "bottom top", scrub: true } });
+                gsap.from('.split-text-1', { y: 30, opacity: 0, duration: 1, ease: "power3.out", scrollTrigger: { trigger: '.split-text-1', start: "top 80%" } });
+                gsap.from('.split-text-2', { y: 40, opacity: 0, duration: 1, delay: 0.2, ease: "power3.out", scrollTrigger: { trigger: '.split-text-2', start: "top 80%" } });
                 const cards = gsap.utils.toArray('.protocol-card');
-                cards.forEach((card, i) => {
-                    if (i < cards.length - 1) {
-                        gsap.to(card.querySelector('.w-full.max-w-5xl'), {
-                            scale: 0.9,
-                            opacity: 0.5,
-                            filter: "blur(10px)",
-                            ease: "none",
-                            scrollTrigger: {
-                                trigger: cards[i + 1],
-                                start: "top 80%",
-                                end: "top 20%",
-                                scrub: true
-                            }
-                        });
-                    }
-                });
-
-                // Journey Steps Animation
-                gsap.utils.toArray('.journey-step').forEach((step, i) => {
-                    gsap.from(step, {
-                        y: 50,
-                        opacity: 0,
-                        duration: 0.8,
-                        delay: i * 0.15,
-                        ease: "power3.out",
-                        scrollTrigger: {
-                            trigger: step,
-                            start: "top 85%"
-                        }
-                    });
-                });
-
-
+                cards.forEach((card, i) => { if (i < cards.length - 1) { gsap.to(card.querySelector('.w-full.max-w-5xl'), { scale: 0.9, opacity: 0.5, filter: "blur(10px)", ease: "none", scrollTrigger: { trigger: cards[i + 1], start: "top 80%", end: "top 20%", scrub: true } }); } });
+                gsap.utils.toArray('.journey-step').forEach((step, i) => { gsap.from(step, { y: 50, opacity: 0, duration: 0.8, delay: i * 0.15, ease: "power3.out", scrollTrigger: { trigger: step, start: "top 85%" } }); });
             });
             return () => ctx.revert();
         });
     </script>
-    <!-- Fixed Floating Action Button (Mobile optimization) -->
-    <div class="fixed bottom-6 right-6 z-50">
-        <a class="bg-green-600 w-14 h-14 rounded-full flex items-center justify-center text-white shadow-xl hover:bg-green-500 transition-all"
-            href="https://wa.me/message">
-            <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <div class="fixed bottom-6 right-6 z-50"><a
+            class="bg-green-600 w-14 h-14 rounded-full flex items-center justify-center text-white shadow-xl hover:bg-green-500 transition-all"
+            href="https://wa.me/5561998399551"><svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z">
                 </path>
-            </svg>
-        </a>
-    </div>
+            </svg></a></div>
 </body>
 
 </html>
