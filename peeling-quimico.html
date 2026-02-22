@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Peeling Químico | Renovação Celular Profunda</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#ecb913",
+            "background-light": "#f8f8f6",
+            "background-dark": "#1a1814",
+          },
+          fontFamily: {
+            "display": ["Manrope", "sans-serif"],
+            "serif": ["Playfair Display", "serif"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Manrope', sans-serif;
+      background-color: #1a1814;
+      color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .serif-font {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .gold-gradient {
+      background: linear-gradient(135deg, #ecb913 0%, #b88a00 100%);
+    }
+
+    .glass-header {
+      background: rgba(26, 24, 20, 0.8);
+      backdrop-filter: blur(10px);
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 w-full z-50 glass-header border-b border-primary/10">
+    <nav class="max-w-screen-xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-primary font-bold text-xl tracking-widest serif-font">ESTÉTICA</div>
+      <button class="text-primary">
+        <span class="material-icons">menu</span>
+      </button>
+    </nav>
+  </header>
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img alt="Luxury skincare model" class="w-full h-full object-cover opacity-50"
+        data-alt="Close-up of glowing skin with warm lighting"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK9U4HcHgVnKKiKKv3zS3rolxJAHSZU0A-QIIlq4OOaSL_ja1rQVEwV3fFmMC5sd6pB2m9G2dFSL-w5pyLUPCgLI5UWs1heBk45M5-sddCt3tPSA0-GiX2ekgWHBglzlLh4upKiR87iFKaM6fwuBXwAoo6i-afoz7ucPL8qnqa81UWQR-FcG4Pd57iAm43u56OHsdc5hDW7vyKlglcFBlJ8KsuFZdLnASh15Mev8ebOrzH1J3l2dgZswTqNA181n2NZD5iVcMsoMg" />
+      <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/60 to-transparent"></div>
+    </div>
+    <div class="relative z-10 px-6 text-center max-w-lg mx-auto">
+      <h1 class="serif-font text-5xl md:text-6xl text-primary mb-2 font-bold">Peeling Químico</h1>
+      <p class="italic text-xl text-white/80 font-light mb-10 tracking-wide">Renovação Celular Profunda</p>
+      <div class="flex flex-col gap-4">
+        <a class="bg-primary hover:bg-primary/90 text-background-dark font-bold py-4 px-8 rounded-lg transition-all shadow-lg shadow-primary/20 uppercase tracking-widest text-sm"
+          href="#">
+          Agendar Avaliação
+        </a>
+        <a class="border border-white/40 hover:border-primary text-white font-medium py-4 px-8 rounded-lg transition-all uppercase tracking-widest text-sm backdrop-blur-sm"
+          href="#about">
+          Saiba Mais
+        </a>
+      </div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      <span class="material-icons text-primary/50">keyboard_double_arrow_down</span>
+    </div>
+  </section>
+  <!-- Description Section -->
+  <section class="py-24 px-6 bg-background-dark" id="about">
+    <div class="max-w-lg mx-auto">
+      <span class="text-primary font-bold tracking-[0.3em] text-xs uppercase block mb-4">Tratamento</span>
+      <h2 class="serif-font text-3xl mb-8 leading-tight">A ciência da esfoliação controlada para uma pele perfeita.</h2>
+      <p class="text-white/60 leading-relaxed mb-12">
+        O Peeling Químico utiliza agentes esfoliantes para remover camadas danificadas da pele, estimulando a
+        regeneração celular e a produção de colágeno. Ideal para quem busca uma textura refinada e um tom uniforme.
+      </p>
+      <!-- Benefits List -->
+      <div class="space-y-6">
+        <div class="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
+          <div class="bg-primary/20 p-2 rounded-lg">
+            <span class="material-icons text-primary">auto_fix_high</span>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg">Redução de Manchas</h3>
+            <p class="text-white/50 text-sm">Elimina hiperpigmentação e melasma de forma eficaz.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
+          <div class="bg-primary/20 p-2 rounded-lg">
+            <span class="material-icons text-primary">clean_hands</span>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg">Controle da Acne</h3>
+            <p class="text-white/50 text-sm">Regula a oleosidade e reduz cicatrizes atróficas.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
+          <div class="bg-primary/20 p-2 rounded-lg">
+            <span class="material-icons text-primary">face_retouching_natural</span>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg">Pele Luminosa</h3>
+            <p class="text-white/50 text-sm">Devolve o viço natural e o brilho da juventude.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Before & After Section -->
+  <section class="py-24 px-6 bg-background-dark/50">
+    <div class="max-w-lg mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="serif-font text-3xl mb-4">Resultados Reais</h2>
+        <div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+      </div>
+      <div class="grid grid-cols-1 gap-8">
+        <div class="relative group">
+          <div class="flex flex-col gap-4 border border-primary/20 p-2 rounded-xl">
+            <div class="relative overflow-hidden rounded-lg flex flex-col sm:flex-row gap-2">
+              <div class="relative w-full aspect-square sm:aspect-auto sm:h-64 flex-1">
+                <img alt="Before treatment" class="w-full h-full object-cover"
+                  data-alt="Skin with some blemishes and texture before treatment"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE-qs_q6BsidiIbRcEx-Mje1Dwd9hvQf-7h3mnOh7ggbe94rMRkj9YU9ytqGmwrbPj4OQIjDjWBmp4QG5QdXlH_4csUu1JGzWPhR55ViIVI1wWd4kJ0rzfzL2tAMchsxb4eU4SbAybKZeKOC9VzoKFJuJG5IVaNkLXFZuV5TLTDJr-vtaKr9QcYpJcXJO8zhhB0Mwia5eqEZoLE9-9MxnI9EFLxtO-Fk05hgSGp9YK3QJuCzofVdFO518H1GxnPfaey7u9fovGmO4" />
+                <span
+                  class="absolute top-4 left-4 bg-black/60 backdrop-blur-sm text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-widest">Antes</span>
+              </div>
+              <div class="relative w-full aspect-square sm:aspect-auto sm:h-64 flex-1">
+                <img alt="After treatment" class="w-full h-full object-cover hue-rotate-15"
+                  data-alt="Smooth glowing clear skin after treatment"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg80_0PByy0ZURW_o0OvM4TtbJofnIIIYvYykynHvxOPR9r-egSJAylGLk1oGMmJiFQhcri1sxf_Tf5fBUcdls-ISGxemXXlBF4s8yi4To4s2XowA7bWVsrtBcszXl1XAAnDKXh5lt8D7wXy8Vc1tsgu3hmzvmOpKarrC9tYSNhajpXP6JDDsSKc81N9hl5Uv-fTR8e7trEwvNlAmTULwUPgA-KpEGWAiGje_Bd8fFPfp-0LYUSLN607ub_MrvEhdci0YpjkbbFMU" />
+                <span
+                  class="absolute top-4 left-4 bg-primary text-background-dark text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Depois</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-center mt-4 text-white/40 text-xs italic">*Os resultados podem variar para cada paciente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FAQ Section -->
+  <section class="py-24 px-6 bg-background-dark">
+    <div class="max-w-lg mx-auto">
+      <h2 class="serif-font text-3xl mb-12 text-center">Dúvidas Frequentes</h2>
+      <div class="space-y-4">
+        <details class="group border-b border-white/10 pb-4">
+          <summary class="flex justify-between items-center cursor-pointer list-none py-2">
+            <span class="text-lg font-medium group-open:text-primary transition-colors">O peeling dói?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="text-white/60 text-sm mt-3 leading-relaxed">
+            É comum sentir um leve ardor ou pinicação durante a aplicação do ácido, que cessa rapidamente após a
+            neutralização. O desconforto é passageiro e bem tolerado.
+          </p>
+        </details>
+        <details class="group border-b border-white/10 pb-4">
+          <summary class="flex justify-between items-center cursor-pointer list-none py-2">
+            <span class="text-lg font-medium group-open:text-primary transition-colors">Quanto tempo de repouso?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="text-white/60 text-sm mt-3 leading-relaxed">
+            Dependendo da profundidade, a descamação dura entre 3 a 7 dias. Não é necessário repouso absoluto, apenas
+            evitar exposição solar direta.
+          </p>
+        </details>
+        <details class="group border-b border-white/10 pb-4">
+          <summary class="flex justify-between items-center cursor-pointer list-none py-2">
+            <span class="text-lg font-medium group-open:text-primary transition-colors">Pode tomar sol?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="text-white/60 text-sm mt-3 leading-relaxed">
+            A exposição solar deve ser evitada rigorosamente por pelo menos 15 dias após o procedimento, sempre
+            utilizando protetor solar de amplo espectro.
+          </p>
+        </details>
+        <details class="group border-b border-white/10 pb-4">
+          <summary class="flex justify-between items-center cursor-pointer list-none py-2">
+            <span class="text-lg font-medium group-open:text-primary transition-colors">Quantas sessões são
+              necessárias?</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="text-white/60 text-sm mt-3 leading-relaxed">
+            Varia de acordo com o objetivo, mas geralmente um protocolo de 3 a 5 sessões oferece resultados
+            transformadores e duradouros.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+  <!-- Footer / Final CTA -->
+  <footer class="py-20 px-6 bg-[#12100a] text-center border-t border-primary/20">
+    <div class="max-w-lg mx-auto">
+      <h2 class="serif-font text-3xl mb-6">Pronta para renovar sua pele?</h2>
+      <p class="text-white/50 mb-10 leading-relaxed">Inicie sua jornada para uma aparência revitalizada hoje mesmo com
+        nossos especialistas.</p>
+      <button
+        class="gold-gradient w-full py-5 rounded-lg text-background-dark font-black uppercase tracking-widest text-sm shadow-xl shadow-primary/30 mb-12">
+        Agendar Minha Consulta
+      </button>
+      <div class="pt-12 border-t border-white/5 flex flex-col items-center">
+        <div class="text-primary font-bold text-xl tracking-widest serif-font mb-6">ESTÉTICA</div>
+        <div class="flex gap-6 mb-8">
+          <a class="text-white/40 hover:text-primary transition-colors" href="#"><span
+              class="material-icons">facebook</span></a>
+          <a class="text-white/40 hover:text-primary transition-colors" href="#"><span
+              class="material-icons">photo_camera</span></a>
+          <a class="text-white/40 hover:text-primary transition-colors" href="#"><span
+              class="material-icons">message</span></a>
+        </div>
+        <p class="text-[10px] text-white/20 uppercase tracking-widest">© 2024 Estética Luxury. Todos os direitos
+          reservados.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Location Map (Pseudo) -->
+  <div class="hidden" data-location="São Paulo, Brazil" style=""></div>
+</body>
+
+</html>
