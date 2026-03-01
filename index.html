@@ -96,6 +96,11 @@
                                 de PDO</a>
                             <a href="microagulhamento.html"
                                 class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Microagulhamento</a>
+                            <a href="rinomodelacao.html"
+                                class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Rinomodelação</a>
+                            <a href="preenchimento-de-mento.html"
+                                class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Preenchimento
+                                de Mento</a>
                         </div>
                     </div>
 
@@ -156,6 +161,11 @@
                             de PDO</a>
                         <a @click="mobileMenuOpen = false" href="microagulhamento.html"
                             class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Microagulhamento</a>
+                        <a @click="mobileMenuOpen = false" href="rinomodelacao.html"
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Rinomodelação</a>
+                        <a @click="mobileMenuOpen = false" href="preenchimento-de-mento.html"
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Preenchimento
+                            de Mento</a>
                     </div>
                 </div>
                 <a @click="mobileMenuOpen = false" href="#about"
@@ -177,14 +187,18 @@
     <section class="relative h-screen min-h-[600px] flex items-center overflow-hidden" id="home">
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
-            <img src="assets/hero.webp" alt="FaceUp - O Lifting Sem Cortes"
-                class="w-full h-full object-cover object-center" />
+            <picture class="w-full h-full">
+                <source media="(max-width: 768px)" srcset="assets/hero%20mobile.png" />
+                <img src="assets/hero.png" alt="FaceUp - O Lifting Sem Cortes"
+                    class="w-full h-full object-cover object-center" />
+            </picture>
             <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
         </div>
 
         <!-- Content -->
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center">
-            <div class="max-w-2xl fade-in-up">
+        <div
+            class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-end pb-24 md:pb-28">
+            <div class="max-w-xl fade-in-up">
 
 
                 <h1 class="font-display text-7xl md:text-8xl lg:text-9xl text-white leading-none mb-2">
@@ -441,7 +455,50 @@
                             Microagulhamento</h3>
                         <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide mb-4">Estético
                         </p>
-                        <a class="text-primary text-sm font-medium flex items-center group/link" href="#">
+                        <a class="text-primary text-sm font-medium flex items-center group/link"
+                            href="microagulhamento.html">
+                            Saiba mais <span
+                                class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Rinomodelação -->
+                <div
+                    class="group relative bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div class="h-[500px] overflow-hidden">
+                        <img alt="Rinomodelação"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            src="assets/procedimentos/rinomodelacao.png" />
+                    </div>
+                    <div class="p-6 relative bg-background-light dark:bg-background-dark z-10 -mt-12 mx-4 shadow-sm">
+                        <h3
+                            class="font-display text-lg mb-2 dark:text-white group-hover:text-primary transition-colors">
+                            Rinomodelação</h3>
+                        <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide mb-4">Estético
+                        </p>
+                        <a class="text-primary text-sm font-medium flex items-center group/link"
+                            href="rinomodelacao.html">
+                            Saiba mais <span
+                                class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Preenchimento de Mento -->
+                <div
+                    class="group relative bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div class="h-[500px] overflow-hidden">
+                        <img alt="Preenchimento de Mento"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            src="assets/procedimentos/preenchimento-mento.png" />
+                    </div>
+                    <div class="p-6 relative bg-background-light dark:bg-background-dark z-10 -mt-12 mx-4 shadow-sm">
+                        <h3
+                            class="font-display text-lg mb-2 dark:text-white group-hover:text-primary transition-colors">
+                            Preenchimento de Mento</h3>
+                        <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide mb-4">Injetável
+                        </p>
+                        <a class="text-primary text-sm font-medium flex items-center group/link"
+                            href="preenchimento-de-mento.html">
                             Saiba mais <span
                                 class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
                         </a>
@@ -486,7 +543,8 @@
                         Médica</span>
                     <h2 class="font-display text-4xl lg:text-5xl text-text-light dark:text-white mb-6">Dra. Lara Pires
                     </h2>
-                    <h3 class="font-body text-xl text-muted-light dark:text-muted-dark font-light mb-8">CRM 32176</h3>
+                    <h3 class="font-body text-xl text-muted-light dark:text-muted-dark font-light mb-8">CRM 28229 |
+                        RQE19486</h3>
                     <div class="prose prose-lg dark:prose-invert text-muted-light dark:text-muted-dark font-light mb-8">
                         <p>
                             Formada pela Universidade Federal da Bahia e especialista em tratamentos faciais e
@@ -505,10 +563,15 @@
                             Entre em Contato
                         </a>
                         <div class="flex space-x-4">
-                            <a class="text-gray-400 hover:text-primary transition-colors" href="#"><span
-                                    class="material-icons-outlined">facebook</span></a>
-                            <a class="text-gray-400 hover:text-primary transition-colors" href="#"><span
+                            <a class="text-gray-400 hover:text-primary transition-colors"
+                                href="https://www.instagram.com/dralarapires" target="_blank" rel="noopener"><span
                                     class="material-icons-outlined">camera_alt</span></a>
+                            <a class="text-gray-400 hover:text-primary transition-colors"
+                                href="https://www.tiktok.com/@dralarapires" target="_blank" rel="noopener"><span
+                                    class="material-icons-outlined">music_note</span></a>
+                            <a class="text-gray-400 hover:text-primary transition-colors"
+                                href="https://www.youtube.com/@Dralarapires" target="_blank" rel="noopener"><span
+                                    class="material-icons-outlined">play_circle</span></a>
                         </div>
                     </div>
                 </div>
@@ -561,56 +624,125 @@
         </div>
     </section>
 
-    <section class="py-24 bg-background-light dark:bg-background-dark relative" id="testimonials">
-        <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none overflow-hidden">
-            <div class="absolute -right-20 top-20 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
-        </div>
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <span class="text-primary text-sm uppercase tracking-[0.2em] font-medium block mb-3">Depoimentos</span>
-            <h2 class="font-display text-3xl md:text-4xl text-text-light dark:text-white mb-16">O que os pacientes dizem
-            </h2>
-            <div x-data="testimonialCarousel()" class="relative overflow-hidden">
-                <div class="flex transition-transform duration-500 ease-in-out"
-                    :style="`transform: translateX(-${current * 100}%)`" @mouseenter="pause()" @mouseleave="play()">
-                    <template x-for="(testimonial, index) in testimonials" :key="index">
-                        <div class="w-full shrink-0 px-4">
-                            <div
-                                class="bg-background-light dark:bg-background-dark p-10 md:p-14 shadow-2xl rounded-sm border border-gray-100 dark:border-gray-800 h-full flex flex-col justify-center">
-                                <div class="mb-6 text-primary flex justify-center">
-                                    <span class="material-icons-outlined text-4xl">format_quote</span>
-                                </div>
-                                <p class="font-display text-xl md:text-2xl italic text-text-light dark:text-gray-200 mb-8 leading-relaxed"
-                                    x-text="'&quot;' + testimonial.quote + '&quot;'"></p>
-                                <div class="flex items-center justify-center space-x-4 mt-auto">
-                                    <div class="w-12 h-12 rounded-full overflow-hidden bg-gray-200 shrink-0">
-                                        <img alt="Paciente" class="w-full h-full object-cover"
-                                            :src="testimonial.image" />
-                                    </div>
-                                    <div class="text-left">
-                                        <p class="font-medium text-text-light dark:text-white"
-                                            x-text="testimonial.name"></p>
-                                        <div class="flex text-primary text-xs">
-                                            <span class="material-icons-outlined text-[16px]">star</span>
-                                            <span class="material-icons-outlined text-[16px]">star</span>
-                                            <span class="material-icons-outlined text-[16px]">star</span>
-                                            <span class="material-icons-outlined text-[16px]">star</span>
-                                            <span class="material-icons-outlined text-[16px]">star</span>
+    <section class="py-24 bg-[#F5F3EE] relative overflow-hidden" id="testimonials">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary text-sm uppercase tracking-[0.2em] font-medium block mb-3">Depoimentos</span>
+                <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-text-light mb-4">Confiança construída com
+                    <span class="italic text-primary">resultados</span>
+                </h2>
+                <div class="w-24 h-0.5 bg-primary mx-auto mt-6"></div>
+            </div>
+
+            <!-- Stacked Card Testimonials -->
+            <div x-data="stackedTestimonials()" class="max-w-5xl mx-auto">
+                <div class="relative">
+                    <!-- Decorative stacked cards behind -->
+                    <div class="absolute inset-x-2 -bottom-2 top-2 bg-primary/20 rounded-[1.5rem] pointer-events-none">
+                    </div>
+                    <div class="absolute inset-x-4 -bottom-4 top-4 bg-primary/10 rounded-[1.5rem] pointer-events-none">
+                    </div>
+
+                    <!-- Carousel Container -->
+                    <div class="relative z-10 overflow-hidden rounded-[1.5rem] bg-[#1A1A1A]">
+                        <!-- Sliding Track -->
+                        <div class="flex transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
+                            :style="`transform: translateX(-${current * 100}%)`">
+                            <template x-for="(testimonial, index) in testimonials" :key="index">
+                                <div class="flex-shrink-0 w-full min-h-[500px] md:h-[500px]">
+                                    <div class="h-full"
+                                        :class="testimonial.image ? 'grid grid-cols-1 md:grid-cols-2' : ''">
+                                        <!-- Text Side -->
+                                        <div class="p-6 md:p-8 flex flex-col order-2 md:order-1 h-[300px] md:h-[500px] overflow-hidden"
+                                            :style="testimonial.image ? '' : 'height: 500px;'">
+                                            <div class="flex flex-col h-full min-h-0">
+                                                <!-- Google Badge -->
+                                                <div class="flex items-center gap-2 mb-3">
+                                                    <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24">
+                                                        <path fill="#4285F4"
+                                                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" />
+                                                        <path fill="#34A853"
+                                                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                                                        <path fill="#FBBC05"
+                                                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+                                                        <path fill="#EA4335"
+                                                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+                                                    </svg>
+                                                    <span
+                                                        class="text-gray-400 text-xs uppercase tracking-wider font-medium">Avaliação
+                                                        Google</span>
+                                                </div>
+
+                                                <!-- Stars -->
+                                                <div class="flex gap-1 mb-4">
+                                                    <template x-for="i in 5" :key="i">
+                                                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor"
+                                                            viewBox="0 0 20 20">
+                                                            <path
+                                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                        </svg>
+                                                    </template>
+                                                </div>
+
+                                                <!-- Quote (scrollable on mobile, clamped on desktop) -->
+                                                <div class="flex-1 overflow-y-auto pr-1 mb-4"
+                                                    style="scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.15) transparent;">
+                                                    <p class="text-gray-200 text-sm md:text-base leading-relaxed font-light"
+                                                        :class="{ 'md:line-clamp-[12]': testimonial.image, 'md:line-clamp-[18]': !testimonial.image }"
+                                                        x-text="testimonial.quote"></p>
+                                                </div>
+                                            </div>
+
+                                            <!-- Author (always pinned at bottom) -->
+                                            <div class="flex-shrink-0 pt-4 border-t border-gray-700/50">
+                                                <p class="text-white font-medium text-base" x-text="testimonial.name">
+                                                </p>
+                                                <p class="text-gray-500 text-xs mt-1" x-text="testimonial.procedure">
+                                                </p>
+                                            </div>
                                         </div>
+
+                                        <!-- Image Side (only shown when photo exists) -->
+                                        <template x-if="testimonial.image">
+                                            <div class="relative h-[450px] md:h-full order-1 md:order-2 bg-[#1A1A1A]">
+                                                <!-- Image -->
+                                                <img :src="testimonial.image" :alt="testimonial.name"
+                                                    class="absolute inset-0 w-full h-full object-contain object-top"
+                                                    loading="lazy" />
+                                                <!-- Gradient overlay -->
+                                                <div
+                                                    class="pointer-events-none absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#1A1A1A] via-transparent to-transparent opacity-50">
+                                                </div>
+                                                <!-- Before/After Label (Fixed Position Bottom Left) -->
+                                                <div
+                                                    class="absolute bottom-4 right-4 md:bottom-6 md:left-6 md:right-auto z-10">
+                                                    <span
+                                                        class="bg-primary/90 text-white text-[10px] uppercase tracking-widest font-bold px-3 py-1.5 rounded-full backdrop-blur-sm whitespace-nowrap shadow-lg shadow-black/50">Antes
+                                                        & Depois</span>
+                                                </div>
+                                            </div>
+                                        </template>
                                     </div>
                                 </div>
-                            </div>
+                            </template>
                         </div>
-                    </template>
+                    </div>
                 </div>
 
-                <div class="flex justify-center mt-8 space-x-3 relative z-10 p-4">
-                    <template x-for="(_, index) in testimonials" :key="index">
-                        <button @click="goTo(index)" class="w-3 h-3 rounded-full transition-colors duration-300"
-                            :class="current === index ? 'bg-primary' : 'bg-gray-300 dark:bg-gray-700 hover:bg-primary/50'"></button>
-                    </template>
+                <!-- Navigation (Outside the relative card wrapper) -->
+                <div class="relative z-20 flex items-center justify-center mt-12 gap-5">
+                    <button @click="pause(); prev()"
+                        class="w-11 h-11 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-500 hover:border-primary hover:text-primary transition-all duration-300 hover:scale-110">
+                        <span class="material-icons-outlined text-xl">chevron_left</span>
+                    </button>
+                    <!-- Pagination Dots removed for cleaner look with many items -->
+                    <button @click="pause(); next()"
+                        class="w-11 h-11 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-500 hover:border-primary hover:text-primary transition-all duration-300 hover:scale-110">
+                        <span class="material-icons-outlined text-xl">chevron_right</span>
+                    </button>
                 </div>
             </div>
-        </div>
     </section>
     <footer class="bg-background-dark text-white pt-20 pb-10 border-t border-gray-800" id="contact">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -624,16 +756,23 @@
                     </p>
                     <div class="flex space-x-4">
                         <a class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-primary hover:border-primary transition-all"
-                            href="#">
-                            <span class="material-icons-outlined text-lg">facebook</span>
-                        </a>
-                        <a class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-primary hover:border-primary transition-all"
-                            href="#">
+                            href="https://www.instagram.com/dralarapires" target="_blank" rel="noopener">
                             <span class="material-icons-outlined text-lg">camera_alt</span>
                         </a>
                         <a class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-primary hover:border-primary transition-all"
-                            href="#">
-                            <span class="material-icons-outlined text-lg">whatsapp</span>
+                            href="https://www.tiktok.com/@dralarapires" target="_blank" rel="noopener">
+                            <span class="material-icons-outlined text-lg">music_note</span>
+                        </a>
+                        <a class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-primary hover:border-primary transition-all"
+                            href="https://www.youtube.com/@Dralarapires" target="_blank" rel="noopener">
+                            <span class="material-icons-outlined text-lg">play_circle</span>
+                        </a>
+                        <a class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-primary hover:border-primary transition-all"
+                            href="https://wa.me/557197064582" target="_blank" rel="noopener">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                            </svg>
                         </a>
                     </div>
                 </div>
@@ -651,14 +790,17 @@
                     <ul class="space-y-4 text-sm font-light text-gray-400">
                         <li class="flex items-start">
                             <span class="material-icons-outlined text-primary mr-3 text-lg mt-0.5">location_on</span>
-                            <span>Centro Médico Empresarial Vitraux<br />R. Eduardo José dos Santos, 43 - 19º
+                            <a href="https://share.google/qIKglkh7pod178YC2" target="_blank" rel="noopener"
+                                class="hover:text-white transition-colors">Centro Médico Empresarial Vitraux<br />R.
+                                Eduardo José dos Santos, 43 - 19º
                                 andar<br />Federação, Salvador - BA, 40210-755<br /><span
                                     class="text-xs text-gray-500 mt-1 block">Atendemos também Feira de Santana e
-                                    região</span></span>
+                                    região</span></a>
                         </li>
                         <li class="flex items-center">
                             <span class="material-icons-outlined text-primary mr-3 text-lg">phone</span>
-                            <span>(71) 99625-3975</span>
+                            <a href="https://wa.me/557197064582" target="_blank" rel="noopener"
+                                class="hover:text-white transition-colors">(71) 9706-4582</a>
                         </li>
                         <li class="flex items-center">
                             <span class="material-icons-outlined text-primary mr-3 text-lg">schedule</span>
@@ -676,7 +818,7 @@
                         Entre em contato para verificar disponibilidade de horários.
                     </p>
                     <a class="w-full block text-center bg-primary hover:bg-primary-dark text-white py-3 text-sm uppercase tracking-widest font-medium transition-colors"
-                        href="#">
+                        href="https://wa.me/557197064582" target="_blank" rel="noopener">
                         Falar no WhatsApp
                     </a>
                 </div>
@@ -693,40 +835,42 @@
     </footer>
 
     <script>
-        function testimonialCarousel() {
+        function stackedTestimonials() {
             return {
                 current: 0,
                 interval: null,
-                testimonials: [
-                    {
-                        quote: "O cuidado da Dra. Lara é único. Ela não apenas trata, mas acolhe. O resultado da minha blefaroplastia superou todas as expectativas, devolvendo uma leveza ao meu olhar que eu achei que não teria mais.",
-                        name: "Mariana Costa",
-                        image: "assets/paciente-depoimento.jpg"
-                    },
-                    {
-                        quote: "Fiquei impressionada com o profissionalismo. Os bioestimuladores devolveram o viço e a firmeza da minha pele de forma super natural. Recomendo de olhos fechados!",
-                        name: "Juliana Mendes",
-                        image: "assets/paciente-depoimento.jpg"
-                    },
-                    {
-                        quote: "A Dra. Lara entendeu perfeitamente o que eu buscava. O preenchimento labial ficou exatamente como eu queria: elegante e discreto. Confio plenamente no seu trabalho.",
-                        name: "Ana Beatriz",
-                        image: "assets/paciente-depoimento.jpg"
+                testimonials: [],
+                async init() {
+                    try {
+                        const res = await fetch('assets/depoimentos/depoimentos.json');
+                        const data = await res.json();
+                        // Show all reviews — with and without photos
+                        this.testimonials = data.map(d => ({
+                            quote: d.texto,
+                            name: d.nome,
+                            procedure: 'Paciente',
+                            image: d.foto ? 'assets/depoimentos/' + d.foto : null
+                        }));
+                        this.play();
+                    } catch (e) {
+                        console.error('Erro ao carregar depoimentos:', e);
                     }
-                ],
-                init() {
-                    this.play();
                 },
                 play() {
                     this.interval = setInterval(() => {
                         this.next();
-                    }, 5000);
+                    }, 7000);
                 },
                 pause() {
                     clearInterval(this.interval);
                 },
                 next() {
+                    if (this.testimonials.length === 0) return;
                     this.current = (this.current === this.testimonials.length - 1) ? 0 : this.current + 1;
+                },
+                prev() {
+                    if (this.testimonials.length === 0) return;
+                    this.current = (this.current === 0) ? this.testimonials.length - 1 : this.current - 1;
                 },
                 goTo(index) {
                     this.current = index;
