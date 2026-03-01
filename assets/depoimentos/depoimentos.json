@@ -1,0 +1,226 @@
+[
+  {
+    "nome": "Bianca Pereira Pessoa",
+    "nota": 5,
+    "tempo": "4 meses atrás",
+    "texto": "Simplesmente amei! A Dra. Lara tem uma mão super leve, não senti nenhuma dor! Ela é super atenciosa, faz um atendimento totalmente personalizado e dá ótimos conselhos, sempre pensando no que é melhor para o paciente. O resultado ficou super natural e equilibrado, exatamente do jeitinho que eu queria! Ela respeita a beleza natural e sabe potencializá-la. Recomendo demais, de olhos fechados!",
+    "foto": "bianca-pereira-pessoa.webp"
+  },
+  {
+    "nome": "Alice Santana",
+    "nota": 5,
+    "tempo": "4 meses atrás",
+    "texto": "Fiz meu procedimento há mais ou menos um mês e estou muito feliz com o resultado. Encontrei a Dra através de indicação de alguns amigos e ela superou todas as minhas expectativas. Além de ser extremamente cuidadosa e atenciosa com os nossos desejos, ter atenção e fazer tudo aos poucos para que possamos ir nos identificando com o processo. A experiência da clínica também foi muito acolhedora. Recomendo de olhos fechados! E com certeza irei voltar!",
+    "foto": "alice-santana.webp"
+  },
+  {
+    "nome": "Ana Beatriz Carvalho",
+    "nota": 5,
+    "tempo": "5 meses atrás",
+    "texto": "Gente, eu amei o atendimento da dra Lara!!!!! O melhor procedimento de olheiras que já fiz na vida. Ela é super atenciosa, super cuidadosa e MUITO competente!!! Estou muito muito feliz com o meu resultado. Agora farei todos os meus procedimentos com ela.",
+    "foto": "ana-beatriz-carvalho.webp"
+  },
+  {
+    "nome": "Valdineia Nogueira",
+    "nota": 5,
+    "tempo": "6 meses atrás",
+    "texto": "Eu estava sentindo que meu rosto estava envelhecido e com cara de cansada por causa das olheiras. A parte de cima da boca também era muito fininha e para dentro. Nunca tinha feito nenhum procedimento antes e confesso que tinha um pouco de receio. Desde a primeira consulta com a Dra. Lara senti confiança total! O resultado superou TODAS as minhas expectativas! Hoje me olho no espelho e me reconheço novamente. Meu olhar está descansado, meu rosto mais harmônico e natural. Sou eternamente grata!",
+    "foto": "valdineia-nogueira.webp"
+  },
+  {
+    "nome": "Thayná Livramento",
+    "nota": 5,
+    "tempo": "7 meses atrás",
+    "texto": "Fiz um procedimento estético com a Dra. Lara Pires e estou simplesmente encantada com o resultado! Coloquei mento e ficou lindo, super natural e harmônico com o meu rosto. O melhor de tudo: não senti dor nenhuma durante o procedimento. A Dra. Lara tem um atendimento incrível, é atenciosa, cuidadosa e transmite muita segurança. Sem dúvidas, uma profissional que eu indico de olhos fechados!",
+    "foto": "thayna-livramento.webp"
+  },
+  {
+    "nome": "Renata Tanajura Cambui",
+    "nota": 5,
+    "tempo": "7 meses atrás",
+    "texto": "Dra. Lara me surpreendeu muito positivamente! Entendeu exatamente o que eu queria. O resultado ficou natural e delicado. E não posso deixar de destacar as \"mãos leves\" dessa profissional incrível!",
+    "foto": "renata-tanajura-cambui.webp"
+  },
+  {
+    "nome": "Geraldo Pessoa",
+    "nota": 5,
+    "tempo": "7 meses atrás",
+    "texto": "Dra Lara é a melhor em harmonização em Salvador. Eu me incomodava com meu queixo e não queria ficar sem barba por isso. Depois da harmonização eu já posso ficar com ou sem barba, porque meu rosto ficou simétrico e mais masculino! Ela foi muito paciente, porque tenho fobia de médico e procedimentos. Mas foi tudo indolor! Indico de olhos fechados!",
+    "foto": "geraldo-pessoa.webp"
+  },
+  {
+    "nome": "Jaqueline Lima Gonçalves",
+    "nota": 5,
+    "tempo": "7 meses atrás",
+    "texto": "Eu sempre tive muito receio de fazer procedimentos faciais. Morria de medo de ficar com um resultado exagerado, artificial, ou que as pessoas percebessem que eu fiz algo. Com a Dra. Lara eu finalmente senti confiança. Ela tem uma mão extremamente leve, foi super cuidadosa e atenciosa em cada detalhe. O resultado ficou exatamente como eu sonhava: discreto, natural, mas com uma diferença que me fez sentir mais bonita e segura. Foi transformador, sem perder minha essência. Indico de olhos fechados!",
+    "foto": "jaqueline-lima-goncalves.webp"
+  },
+  {
+    "nome": "Marcella Sousa",
+    "nota": 5,
+    "tempo": "4 meses atrás",
+    "texto": "Dra. Lara foi impecável!! Ouviu atentamente as minhas queixas e fez uma intervenção na medida! Atenciosa, competente e atenta!! Recomendo muito!!",
+    "foto": "marcella-sousa.webp"
+  },
+  {
+    "nome": "Jefferson Porto",
+    "nota": 5,
+    "tempo": "6 meses atrás",
+    "texto": "A melhor em harmonização em Salvador! Toda a experiência que tive desde a chegada ao consultório, à realização dos procedimentos foram muito bem explicados e conduzidos pela Dra Lara. O resultado ficou além do esperado… indico com certeza!",
+    "foto": "jefferson-porto.webp"
+  },
+  {
+    "nome": "Lilian Pessoa",
+    "nota": 5,
+    "tempo": "7 meses atrás",
+    "texto": "Estou extremamente satisfeita com o trabalho da Dra. Lara Pires. Estava com sensação de tudo caído, cheguei no consultório já pensando em fazer plástica e ela foi me acalmando e mostrando a harmonização. Uma profissional muito dedicada, cautelosa, precisa no diagnóstico. Rejuvenesceu o meu olhar com maturidade e naturalidade. Estou me sentindo uma mulher sendo cuidada e abraçada com profissionalismo e muito carinho. Super indico a todos!",
+    "foto": "lilian-pessoa.webp"
+  },
+  {
+    "nome": "Lara Andrade",
+    "nota": 5,
+    "tempo": "7 meses atrás",
+    "texto": "Eu já vinha querendo dar uma leve mudada no meu rosto. Com a Dra. Lara, foi totalmente diferente! O resultado ficou exatamente como eu sonhava: natural, elegante, parece que meu rosto deu uma \"levantada\", a papada suavizou e o contorno ficou muito mais harmônico. Ela tem um olhar clínico incrível, entende exatamente o que a gente quer e entrega mais do que a gente espera. Super indico, de verdade!",
+    "foto": "lara-andrade.webp"
+  },
+  {
+    "nome": "Carla Pires Nogueira",
+    "nota": 5,
+    "tempo": "6 meses atrás",
+    "texto": "Amei o atendimento da Dra. Lara, ela é muito atenciosa e detalhista. Percebi que ela escuta e considera bastante o desejo do paciente, o que me deixou segura. Meu resultado ficou natural e lindo como eu desejava.",
+    "foto": "carla-pires-nogueira.webp"
+  },
+  {
+    "nome": "Ingrid Maria",
+    "nota": 5,
+    "tempo": "7 meses atrás",
+    "texto": "Eu já acompanhava a Dra. Lara pelas redes sociais e sempre admirei demais o trabalho dela. Depois de um tempo criando coragem, marquei minha primeira consulta para começar a harmonização facial. Eu simplesmente amei o resultado! Meu rosto parece mais fino, mais leve, e as fotos de perfil estão ficando lindas demais! Sem dúvidas, a melhor médica que eu poderia ter escolhido!",
+    "foto": "ingrid-maria.webp"
+  },
+  {
+    "nome": "Maria Emília Silva",
+    "nota": 5,
+    "tempo": "7 meses atrás",
+    "texto": "Fiz a blefaroplastia com a excelente, competente, dedicada, responsável, atenciosa, carinhosa e humana Dra. Lara. Indico a todos vocês que queiram fazer. Muitíssimo obrigada, estou feliz pelo resultado do seu trabalho. Deus continue te iluminando e protegendo sua vida.",
+    "foto": "maria-emilia-silva.webp"
+  },
+  {
+    "nome": "Bianca Barreto",
+    "nota": 5,
+    "tempo": "7 meses atrás",
+    "texto": "Maravilhosa!!!! Transformou não só meus lábios, como minha autoestima. Super cuidadosa, um doce de profissional, preocupada o tempo inteiro com meu bem estar. Recomendo demais!",
+    "foto": "bianca-barreto.webp"
+  },
+  {
+    "nome": "Cinthia Rios",
+    "nota": 5,
+    "tempo": "7 meses atrás",
+    "texto": "PERFEITA! Profissional competente, dedicada, atenciosa e mais de fada! Entregou um resultado que ficou muito melhor que imaginei, moldando meu rostinho com naturalidade e efeito.",
+    "foto": "cinthia-rios.webp"
+  },
+  {
+    "nome": "Flavia Lopes Bomfim",
+    "nota": 5,
+    "tempo": "6 meses atrás",
+    "texto": "Profissional excelente! Ela transformou meu nariz! Estou apaixonada pelo resultado! Indico de olhos fechados!! A melhor!",
+    "foto": "flavia-lopes-bomfim.webp"
+  },
+  {
+    "nome": "Jose Carlos",
+    "nota": 5,
+    "tempo": "4 meses atrás",
+    "texto": "Uma ótima profissional, desde a primeira consulta te dá maior apoio. Super feliz!",
+    "foto": "jose-carlos.webp"
+  },
+  {
+    "nome": "Natália",
+    "nota": 5,
+    "tempo": "7 meses atrás",
+    "texto": "Faço acompanhamento com a Dra. Lara Pires há vários anos e só tenho elogios. É uma excelente profissional, sempre muito atenciosa e cuidadosa. Explica todos os passos dos procedimentos e da consulta com calma e clareza, transmitindo muita confiança durante o atendimento. Além disso, oferece todo o suporte necessário no pós. Recomendo de olhos fechados!",
+    "foto": "natalia.webp"
+  },
+  {
+    "nome": "Joice Cardoso",
+    "nota": 5,
+    "tempo": "4 meses atrás",
+    "texto": "Conheci Dra Lara por indicação e fui para uma avaliação com ela! Chegando lá, fizemos meu queixo! Eu amei demais o resultado, sai me sentindo muito linda!! Fez muita diferença no meu rosto… Profissional muito competente e simpática! Virei paciente fiel.",
+    "foto": null
+  },
+  {
+    "nome": "Mariana Gomes de Cerqueira",
+    "nota": 5,
+    "tempo": "5 meses atrás",
+    "texto": "Sem palavras para agradecer a Dra. Lara. A conheci através do Instagram, onde já me encantei com os resultados de outros pacientes. Desde o primeiro atendimento foi muito gentil e carinhosa, me deixando muito tranquila para realizar meu primeiro procedimento estético. Estou amando o resultado. Me sinto mais confiante e com a autoestima renovada. Recomendo demais!",
+    "foto": null
+  },
+  {
+    "nome": "Amanda Dias Cavalcante",
+    "nota": 5,
+    "tempo": "7 meses atrás",
+    "texto": "Dra. Lara é uma profissional muito competente, educada e você sente muita confiança no que ela está fazendo. Fiz botox duas vezes com ela e adorei o resultado. Ela tem uma mão leve e super delicada para cuidar do nosso rosto, ideal para quem busca fazer qualquer intervenção na face. Recomendo a todos o trabalho dela.",
+    "foto": null
+  },
+  {
+    "nome": "Cássio Amorim",
+    "nota": 5,
+    "tempo": "5 meses atrás",
+    "texto": "A Dra. Lara é muito competente e dedicada ao que faz, não à toa os resultados são de excelência; além disso, é muito educada, prestativa e atenciosa.",
+    "foto": null
+  },
+  {
+    "nome": "Leila Brígida",
+    "nota": 5,
+    "tempo": "9 meses atrás",
+    "texto": "Dra. Lara sempre foi muitíssimo atenciosa, cuidadosa em todos os sentidos com a minha mãe, a qual é paciente dela. Isso ocorreu desde o primeiro contato e se fortaleceu durante o acompanhamento antes, bem como depois da cirurgia. Médica muito competente e que demonstra respeito, cuidado e atenção particularizada com os seus pacientes.",
+    "foto": null
+  },
+  {
+    "nome": "Claudia Soares",
+    "nota": 5,
+    "tempo": "9 meses atrás",
+    "texto": "Conheci Dra. Lara através de indicação. Logo na primeira consulta me senti à vontade. Uma pessoa muito solicita, seu jeito amável me conquistou. Foi feita a cirurgia e tudo correu muito bem. O resultado foi excelente. Graças a Deus estou bem e agradeço por ter conhecido uma médica capacitada.",
+    "foto": null
+  },
+  {
+    "nome": "Simone Laste",
+    "nota": 5,
+    "tempo": "7 meses atrás",
+    "texto": "A primeira vez que faço um procedimento estético no rosto, fui com receio devido aos resultados que vemos na internet, mas Dra Lara muito paciente me explicou como funcionava o procedimento passo a passo, num atendimento humanizado, entregou um resultado impecável que nem nos meus melhores sonhos imaginei. Maravilhosa, indico pra todo mundo!",
+    "foto": null
+  },
+  {
+    "nome": "Jucicleide Batista",
+    "nota": 5,
+    "tempo": "9 meses atrás",
+    "texto": "Fiz minha cirurgia com a Dra Lara e foi uma experiência incrível, ela me deixou segura em todos os procedimentos, me atendeu com muito amor e carinho. Antes de fazer minha cirurgia estava bastante preocupada, ela foi a luz em meio disso tudo, só tenho a agradecer a ela por ser uma ótima profissional.",
+    "foto": null
+  },
+  {
+    "nome": "Naiara Dourado",
+    "nota": 5,
+    "tempo": "9 meses atrás",
+    "texto": "Minha experiência com a Dra Lara é uma das melhores possíveis, pois ela me acompanha há mais de um ano, entre consultas e cirurgia. Ela se preocupa muito com nosso bem estar e até disponibiliza o WhatsApp para poder nos acompanhar na recuperação pós cirurgia. Hoje só tenho que agradecer por todo cuidado e dedicação.",
+    "foto": null
+  },
+  {
+    "nome": "Tais Belas",
+    "nota": 5,
+    "tempo": "4 meses atrás",
+    "texto": "Profissional excelente, usa as melhores técnicas personalizadas ao paciente, super atenciosa e entrega um resultado natural e funcional.",
+    "foto": null
+  },
+  {
+    "nome": "Mercia Alves",
+    "nota": 5,
+    "tempo": "9 meses atrás",
+    "texto": "Uma ótima e excelente médica, minha tia fez uma cirurgia com ela, a recuperação foi excelente. Uma doutora confiável e competente, uma médica que se preocupa com seus pacientes. Nota mil!",
+    "foto": null
+  },
+  {
+    "nome": "Lise Pimenta",
+    "nota": 5,
+    "tempo": "7 meses atrás",
+    "texto": "Extremamente atenciosa e é excelente profissional! Recomendo muito!",
+    "foto": null
+  }
+]

@@ -645,17 +645,20 @@
                     </div>
 
                     <!-- Carousel Container -->
-                    <div class="relative z-10 overflow-hidden rounded-[1.5rem] bg-[#1A1A1A]">
+                    <div class="relative z-10 overflow-hidden rounded-[1.5rem] bg-[#1A1A1A] transition-[height] duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
+                        :style="containerHeight !== 'auto' ? `height: ${containerHeight}` : ''">
                         <!-- Sliding Track -->
-                        <div class="flex transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
+                        <div x-ref="track"
+                            class="flex items-start transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
                             :style="`transform: translateX(-${current * 100}%)`">
                             <template x-for="(testimonial, index) in testimonials" :key="index">
-                                <div class="flex-shrink-0 w-full min-h-[500px] md:h-[500px]">
+                                <div class="slide-item flex-shrink-0 w-full"
+                                    :class="testimonial.image ? '' : 'h-[380px] md:h-[500px]'">
                                     <div class="h-full"
                                         :class="testimonial.image ? 'grid grid-cols-1 md:grid-cols-2' : ''">
                                         <!-- Text Side -->
-                                        <div class="p-6 md:p-8 flex flex-col order-2 md:order-1 h-[300px] md:h-[500px] overflow-hidden"
-                                            :style="testimonial.image ? '' : 'height: 500px;'">
+                                        <div class="p-6 md:p-8 flex flex-col order-2 md:order-1 overflow-hidden"
+                                            :class="testimonial.image ? 'h-[300px] md:h-[500px]' : 'h-full'">
                                             <div class="flex flex-col h-full min-h-0">
                                                 <!-- Google Badge -->
                                                 <div class="flex items-center gap-2 mb-3">
@@ -840,6 +843,7 @@
                 current: 0,
                 interval: null,
                 testimonials: [],
+                containerHeight: 'auto',
                 async init() {
                     try {
                         const res = await fetch('assets/depoimentos/depoimentos.json');
@@ -851,10 +855,28 @@
                             procedure: 'Paciente',
                             image: d.foto ? 'assets/depoimentos/' + d.foto : null
                         }));
+
+                        this.$nextTick(() => {
+                            this.updateHeight();
+                        });
+
+                        window.addEventListener('resize', () => {
+                            this.updateHeight();
+                        });
+
                         this.play();
                     } catch (e) {
                         console.error('Erro ao carregar depoimentos:', e);
                     }
+                },
+                updateHeight() {
+                    this.$nextTick(() => {
+                        if (!this.$refs.track) return;
+                        const slides = this.$refs.track.querySelectorAll('.slide-item');
+                        if (slides[this.current]) {
+                            this.containerHeight = slides[this.current].offsetHeight + 'px';
+                        }
+                    });
                 },
                 play() {
                     this.interval = setInterval(() => {
@@ -867,13 +889,16 @@
                 next() {
                     if (this.testimonials.length === 0) return;
                     this.current = (this.current === this.testimonials.length - 1) ? 0 : this.current + 1;
+                    this.updateHeight();
                 },
                 prev() {
                     if (this.testimonials.length === 0) return;
                     this.current = (this.current === 0) ? this.testimonials.length - 1 : this.current - 1;
+                    this.updateHeight();
                 },
                 goTo(index) {
                     this.current = index;
+                    this.updateHeight();
                 }
             }
         }
