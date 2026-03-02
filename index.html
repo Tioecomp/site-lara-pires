@@ -276,30 +276,47 @@
     </nav>
 
     <section class="relative h-screen min-h-[600px] flex items-center overflow-hidden" id="home">
+        <!-- Cinematic Noise Overlay -->
+        <svg class="pointer-events-none fixed inset-0 z-50 h-full w-full opacity-[0.03] mix-blend-overlay">
+            <filter id="noise">
+                <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch">
+                </feTurbulence>
+            </filter>
+            <rect width="100%" height="100%" filter="url(#noise)"></rect>
+        </svg>
+
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
             <picture class="w-full h-full">
-                <source media="(max-width: 768px)" srcset="assets/hero%20mobile.png" />
-                <img src="assets/hero.png" alt="FaceUp - O Lifting Sem Cortes"
-                    class="w-full h-full object-cover object-center" />
+                <!-- Using the same portrait image for all views as requested -->
+                <img src="assets/hero%20mobile%202.png" alt="Dra Lara Pires"
+                    class="w-full h-full object-cover object-[center_30%] md:object-[center_right_top_25%] min-[1400px]:object-[70%_25%]" />
             </picture>
-            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent hero-shadow-anim">
+            <!-- Softer gradient for cinematic contrast -->
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent md:bg-gradient-to-t md:from-black/90 md:via-black/20 hero-shadow-anim">
             </div>
         </div>
 
         <!-- Content -->
         <div
-            class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-end pb-32 md:pb-36 md:pr-[45%]">
-            <div class="max-w-md md:max-w-lg">
+            class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-end pb-8 flex-1 md:pb-24">
+            <div class="max-w-2xl mt-auto pt-32 md:mt-auto md:max-w-xl">
 
-                <h1 class="font-display text-7xl md:text-8xl lg:text-9xl text-white leading-none mb-4 hero-stagger"
+                <p class="font-body text-primary text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-2 hero-stagger"
+                    style="animation-delay: 0.4s">
+                    A Essência da
+                </p>
+
+                <h1 class="font-display text-7xl md:text-8xl lg:text-[8rem] text-white leading-[0.9] mb-6 hero-stagger italic"
                     style="animation-delay: 0.6s">
-                    FaceUp<span class="text-primary">.</span>
+                    Suavidade.
                 </h1>
-                <p class="font-body text-gray-300 text-lg font-light max-w-md leading-relaxed mb-6 hero-stagger"
+
+                <p class="font-body text-gray-300 text-base md:text-lg font-light max-w-lg leading-relaxed mb-10 hero-stagger"
                     style="animation-delay: 1.0s">
-                    Harmonização facial que reposiciona os tecidos, trata a flacidez e rejuvenesce com naturalidade.
-                    Resultados imediatos.
+                    Harmonização facial que reposiciona os tecidos e rejuvenesce com extrema naturalidade.
+                    Resultados tangíveis e imediatos.
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4 hero-stagger" style="animation-delay: 1.4s">
@@ -309,7 +326,7 @@
                         Quero Rejuvenescer
                     </a>
                     <a href="#results"
-                        class="px-8 py-4 border border-white/30 text-white font-medium uppercase tracking-widest text-sm hover:bg-white/10 transition-colors duration-300 flex items-center justify-center gap-2 rounded-sm group">
+                        class="hidden sm:flex px-8 py-4 border border-white/30 text-white font-medium uppercase tracking-widest text-sm hover:bg-white/10 transition-colors duration-300 items-center justify-center gap-2 rounded-sm group">
                         Ver Resultados
                         <span
                             class="material-icons-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
@@ -453,26 +470,6 @@
             </div>
             <!-- Featured Procedures: 2x2 Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Full Face -->
-                <div
-                    class="group relative bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
-                    <div class="h-[500px] overflow-hidden">
-                        <img alt="Full Face"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                            src="assets/procedimentos/fullface.jpg" />
-                    </div>
-                    <div class="p-6 relative bg-background-light dark:bg-background-dark z-10 -mt-12 mx-4 shadow-sm">
-                        <h3
-                            class="font-display text-lg mb-2 dark:text-white group-hover:text-primary transition-colors">
-                            Full Face</h3>
-                        <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide mb-4">Estético
-                        </p>
-                        <a class="text-primary text-sm font-medium flex items-center group/link" href="full-face.html">
-                            Saiba mais <span
-                                class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
-                    </div>
-                </div>
                 <!-- Blefaroplastia -->
                 <div
                     class="group relative bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
@@ -483,10 +480,8 @@
                     </div>
                     <div class="p-6 relative bg-background-light dark:bg-background-dark z-10 -mt-12 mx-4 shadow-sm">
                         <h3
-                            class="font-display text-lg mb-2 dark:text-white group-hover:text-primary transition-colors">
+                            class="font-display text-lg mb-4 dark:text-white group-hover:text-primary transition-colors">
                             Blefaroplastia</h3>
-                        <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide mb-4">Cirúrgico
-                        </p>
                         <a class="text-primary text-sm font-medium flex items-center group/link"
                             href="blefaroplastia.html">
                             Saiba mais <span
@@ -494,20 +489,19 @@
                         </a>
                     </div>
                 </div>
+
                 <!-- Rinomodelação -->
                 <div
                     class="group relative bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
                     <div class="h-[500px] overflow-hidden">
                         <img alt="Rinomodelação"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                            src="assets/procedimentos/rinomodelacao.png" />
+                            src="assets/procedimentos/rinomodelacao.webp" />
                     </div>
                     <div class="p-6 relative bg-background-light dark:bg-background-dark z-10 -mt-12 mx-4 shadow-sm">
                         <h3
-                            class="font-display text-lg mb-2 dark:text-white group-hover:text-primary transition-colors">
+                            class="font-display text-lg mb-4 dark:text-white group-hover:text-primary transition-colors">
                             Rinomodelação</h3>
-                        <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide mb-4">Estético
-                        </p>
                         <a class="text-primary text-sm font-medium flex items-center group/link"
                             href="rinomodelacao.html">
                             Saiba mais <span
@@ -515,20 +509,38 @@
                         </a>
                     </div>
                 </div>
+
+                <!-- Full Face -->
+                <div
+                    class="group relative bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div class="h-[500px] overflow-hidden">
+                        <img alt="Full Face"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            src="assets/procedimentos/fullface.webp" />
+                    </div>
+                    <div class="p-6 relative bg-background-light dark:bg-background-dark z-10 -mt-12 mx-4 shadow-sm">
+                        <h3
+                            class="font-display text-lg mb-4 dark:text-white group-hover:text-primary transition-colors">
+                            Full Face</h3>
+                        <a class="text-primary text-sm font-medium flex items-center group/link" href="full-face.html">
+                            Saiba mais <span
+                                class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
                 <!-- Preenchimento de Mento -->
                 <div
                     class="group relative bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
                     <div class="h-[500px] overflow-hidden">
                         <img alt="Preenchimento de Mento"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                            src="assets/procedimentos/preenchimento-mento.png" />
+                            src="assets/procedimentos/preenchimento-mento.webp" />
                     </div>
                     <div class="p-6 relative bg-background-light dark:bg-background-dark z-10 -mt-12 mx-4 shadow-sm">
                         <h3
-                            class="font-display text-lg mb-2 dark:text-white group-hover:text-primary transition-colors">
+                            class="font-display text-lg mb-4 dark:text-white group-hover:text-primary transition-colors">
                             Preenchimento de Mento</h3>
-                        <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide mb-4">Injetável
-                        </p>
                         <a class="text-primary text-sm font-medium flex items-center group/link"
                             href="preenchimento-de-mento.html">
                             Saiba mais <span
@@ -557,7 +569,6 @@
                     <h3
                         class="font-display text-base text-text-light dark:text-white mb-1 group-hover:text-primary transition-colors">
                         Peeling Químico</h3>
-                    <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide">Estético</p>
                 </a>
                 <!-- Bioestimuladores -->
                 <a href="bioestimuladores.html"
@@ -567,7 +578,6 @@
                     <h3
                         class="font-display text-base text-text-light dark:text-white mb-1 group-hover:text-primary transition-colors">
                         Bioestimuladores</h3>
-                    <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide">Injetável</p>
                 </a>
                 <!-- Fios de PDO -->
                 <a href="fios-de-pdo.html"
@@ -577,7 +587,6 @@
                     <h3
                         class="font-display text-base text-text-light dark:text-white mb-1 group-hover:text-primary transition-colors">
                         Fios de PDO</h3>
-                    <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide">Estético</p>
                 </a>
                 <!-- Microagulhamento -->
                 <a href="microagulhamento.html"
@@ -587,7 +596,6 @@
                     <h3
                         class="font-display text-base text-text-light dark:text-white mb-1 group-hover:text-primary transition-colors">
                         Microagulhamento</h3>
-                    <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide">Estético</p>
                 </a>
             </div>
         </div>
@@ -1165,11 +1173,7 @@
             </div>
             <div
                 class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-light">
-                <p>© 2023 Dra. Lara Pires. Todos os direitos reservados.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a class="hover:text-white" href="#">Política de Privacidade</a>
-                    <a class="hover:text-white" href="#">Termos de Uso</a>
-                </div>
+                <p>© 2026 Dra. Lara Pires. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
@@ -1243,7 +1247,13 @@
 
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/557197064582?text=Ol%C3%A1%2C%20quero%20marcar%20uma%20consulta%20com%20a%20Dra.%20Lara%20Pires"
-        target="_blank" rel="noopener noreferrer"
+        target="_blank" rel="noopener noreferrer" x-data="{ showWhatsapp: false }"
+        @scroll.window="showWhatsapp = (window.pageYOffset > 500)" x-show="showWhatsapp"
+        x-transition:enter="transition ease-out duration-300 transform"
+        x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-300 transform"
+        x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-8"
+        style="display: none;"
         class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg shadow-black/30 hover:scale-110 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center group"
         aria-label="Falar no WhatsApp">
         <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
