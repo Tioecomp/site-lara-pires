@@ -6,6 +6,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Dra. Lara Pires | Blefaroplastia e Estética Facial</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script>
         tailwind.config = {
@@ -48,6 +50,92 @@
 
         .clip-image-angled {
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        /* Hero Stagger Animation */
+        @keyframes heroFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heroShadow {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hero-stagger {
+            opacity: 0;
+            animation: heroFadeUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        .hero-shadow-anim {
+            opacity: 0;
+            animation: heroShadow 1.5s ease-out forwards;
+            animation-delay: 0.3s;
+        }
+
+        /* Journey Step Animation */
+        .journey-step-idle>div:first-child {
+            opacity: 0.4;
+            transform: scale(0.85);
+            border-color: #e5e7eb;
+            transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .journey-step-idle>div:first-child span {
+            color: rgba(188, 165, 120, 0.3);
+            transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .journey-step-idle>h3,
+        .journey-step-idle>p {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .journey-step-active>div:first-child {
+            opacity: 1;
+            transform: scale(1);
+            border-color: #BCA578;
+            box-shadow: 0 10px 25px -5px rgba(188, 165, 120, 0.15);
+            transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .journey-step-active>div:first-child span {
+            color: #BCA578;
+            transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .journey-step-active>h3,
+        .journey-step-active>p {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .journey-step-active>h3 {
+            transition-delay: inherit;
+        }
+
+        .journey-step-active>p {
+            transition-delay: inherit;
+        }
+
+        .journey-step-active>div:first-child {
+            transition-delay: inherit;
         }
     </style>
 </head>
@@ -114,7 +202,8 @@
 
                 <!-- CTA Button -->
                 <div class="hidden md:block">
-                    <a href="#contact"
+                    <a href="https://wa.me/557197064582?text=Ol%C3%A1%2C%20quero%20marcar%20uma%20consulta%20com%20a%20Dra.%20Lara%20Pires"
+                        target="_blank" rel="noopener"
                         class="px-6 py-3 bg-primary text-surface-dark text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-white transition-colors">
                         Agendar Avaliação
                     </a>
@@ -176,7 +265,9 @@
                 <a @click="mobileMenuOpen = false" href="#blog"
                     class="block text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors py-3 border-b border-gray-800/50">Blog</a>
                 <div class="pt-4 pb-2">
-                    <a @click="mobileMenuOpen = false" href="#contact"
+                    <a @click="mobileMenuOpen = false"
+                        href="https://wa.me/557197064582?text=Ol%C3%A1%2C%20quero%20marcar%20uma%20consulta%20com%20a%20Dra.%20Lara%20Pires"
+                        target="_blank" rel="noopener"
                         class="block w-full px-6 py-4 bg-primary text-[#1A1A1A] text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-white transition-colors text-center shadow-lg">Agendar
                         Avaliação</a>
                 </div>
@@ -192,30 +283,28 @@
                 <img src="assets/hero.png" alt="FaceUp - O Lifting Sem Cortes"
                     class="w-full h-full object-cover object-center" />
             </picture>
-            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent hero-shadow-anim">
+            </div>
         </div>
 
         <!-- Content -->
         <div
-            class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-end pb-24 md:pb-28">
-            <div class="max-w-xl fade-in-up">
+            class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-end pb-32 md:pb-36 md:pr-[45%]">
+            <div class="max-w-md md:max-w-lg">
 
-
-                <h1 class="font-display text-7xl md:text-8xl lg:text-9xl text-white leading-none mb-2">
+                <h1 class="font-display text-7xl md:text-8xl lg:text-9xl text-white leading-none mb-4 hero-stagger"
+                    style="animation-delay: 0.6s">
                     FaceUp<span class="text-primary">.</span>
                 </h1>
-
-                <h2 class="font-display italic text-4xl md:text-5xl text-white/90 mb-6 font-light">
-                    O Lifting Sem Cortes
-                </h2>
-
-                <p class="font-body text-gray-300 text-lg font-light max-w-lg leading-relaxed mb-10">
+                <p class="font-body text-gray-300 text-lg font-light max-w-md leading-relaxed mb-6 hero-stagger"
+                    style="animation-delay: 1.0s">
                     Harmonização facial que reposiciona os tecidos, trata a flacidez e rejuvenesce com naturalidade.
                     Resultados imediatos.
                 </p>
 
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#contact"
+                <div class="flex flex-col sm:flex-row gap-4 hero-stagger" style="animation-delay: 1.4s">
+                    <a href="https://wa.me/557197064582?text=Ol%C3%A1%2C%20quero%20marcar%20uma%20consulta%20com%20a%20Dra.%20Lara%20Pires"
+                        target="_blank" rel="noopener"
                         class="px-8 py-4 bg-primary text-surface-dark font-medium uppercase tracking-widest text-sm hover:bg-white transition-colors duration-300 text-center rounded-sm">
                         Quero Rejuvenescer
                     </a>
@@ -237,110 +326,153 @@
         </div>
     </section>
 
-    <section class="py-20 bg-surface-light dark:bg-surface-dark border-y border-gray-100 dark:border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div
-                    class="p-8 border border-gray-100 dark:border-gray-700 bg-background-light dark:bg-background-dark hover:border-primary/50 transition-colors duration-300 group">
-                    <div
-                        class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300 text-primary">
-                        <span class="material-icons-outlined text-2xl">apartment</span>
-                    </div>
-                    <h3 class="font-display text-xl mb-3 dark:text-white">Clínica Moderna</h3>
-                    <p class="text-muted-light dark:text-muted-dark font-light text-sm leading-relaxed">
-                        Ambiente sofisticado e acolhedor, projetado para oferecer o máximo conforto e segurança durante
-                        seus procedimentos.
-                    </p>
-                </div>
-                <div
-                    class="p-8 border border-gray-100 dark:border-gray-700 bg-background-light dark:bg-background-dark hover:border-primary/50 transition-colors duration-300 group">
-                    <div
-                        class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300 text-primary">
-                        <span class="material-icons-outlined text-2xl">favorite_border</span>
-                    </div>
-                    <h3 class="font-display text-xl mb-3 dark:text-white">Atendimento Humanizado</h3>
-                    <p class="text-muted-light dark:text-muted-dark font-light text-sm leading-relaxed">
-                        Cada paciente é único. Oferecemos uma abordagem personalizada, ouvindo suas necessidades e
-                        desejos.
-                    </p>
-                </div>
-                <div
-                    class="p-8 border border-gray-100 dark:border-gray-700 bg-background-light dark:bg-background-dark hover:border-primary/50 transition-colors duration-300 group">
-                    <div
-                        class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300 text-primary">
-                        <span class="material-icons-outlined text-2xl">biotech</span>
-                    </div>
-                    <h3 class="font-display text-xl mb-3 dark:text-white">Tecnologia de Ponta</h3>
-                    <p class="text-muted-light dark:text-muted-dark font-light text-sm leading-relaxed">
-                        Utilizamos os equipamentos e técnicas mais avançados do mercado para garantir resultados
-                        naturais e duradouros.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-background-light dark:bg-background-dark">
+    <section class="py-24 bg-background-light dark:bg-background-dark" id="journey" x-data="{ animated: false }"
+        x-intersect:enter.half="if(!animated){ animated = true }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span
-                    class="text-primary text-sm uppercase tracking-[0.2em] font-medium block mb-3">Transformação</span>
-                <h2 class="font-display text-4xl md:text-5xl text-text-light dark:text-white mb-6">Resultados que
-                    Inspiram</h2>
-                <div class="w-24 h-0.5 bg-primary mx-auto"></div>
+                <span class="text-primary text-sm uppercase tracking-[0.2em] font-medium block mb-3">Como
+                    Funciona</span>
+                <h2 class="font-display text-4xl md:text-5xl text-text-light dark:text-white mb-6">Nossa Jornada</h2>
+                <p class="font-body text-muted-light dark:text-muted-dark text-lg font-light">
+                    Do primeiro contato ao resultado final, cada etapa é planejada para que você se sinta segura,
+                    acolhida e confiante.
+                </p>
+                <div class="w-24 h-0.5 bg-primary mx-auto mt-6"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="relative group cursor-pointer overflow-hidden rounded-lg shadow-xl">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10"></div>
-                    <img alt="Comparativo Antes e Depois" class="w-full h-[400px] object-cover"
-                        src="assets/before-after.jpg" />
-                    <div class="absolute bottom-6 left-6 z-20">
-                        <p class="text-white font-display text-2xl">Rejuvenescimento</p>
-                        <p class="text-gray-200 text-sm font-light">Bioestimuladores de Colágeno</p>
+
+            <!-- Desktop: Horizontal Timeline / Mobile: Vertical -->
+            <div class="relative">
+                <!-- Connecting Line (Desktop) -->
+                <div
+                    class="hidden md:block absolute top-[60px] left-[10%] right-[10%] h-[2px] bg-gray-200 dark:bg-gray-700 z-0">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center text-center group"
+                        :class="animated ? 'journey-step-active' : 'journey-step-idle'"
+                        :style="animated ? 'transition-delay: 0.3s' : ''">
+                        <div
+                            class="w-[120px] h-[120px] rounded-full bg-surface-light dark:bg-surface-dark border-2 border-gray-200 dark:border-gray-700 flex items-center justify-center mb-6 group-hover:border-primary group-hover:shadow-lg group-hover:shadow-primary/10 transition-all duration-500 relative">
+                            <div
+                                class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shadow-md">
+                                01</div>
+                            <span
+                                class="material-icons-outlined text-4xl text-primary/70 group-hover:text-primary group-hover:scale-110 transition-all duration-300">search</span>
+                        </div>
+                        <h3 class="font-display text-lg text-text-light dark:text-white mb-2">Avaliação Global</h3>
+                        <p
+                            class="text-muted-light dark:text-muted-dark text-sm font-light leading-relaxed max-w-[250px]">
+                            Analisamos sua anatomia facial, a qualidade da sua pele e, acima de tudo, os seus
+                            desejos e expectativas.
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center text-center group"
+                        :class="animated ? 'journey-step-active' : 'journey-step-idle'"
+                        :style="animated ? 'transition-delay: 0.8s' : ''">
+                        <div
+                            class="w-[120px] h-[120px] rounded-full bg-surface-light dark:bg-surface-dark border-2 border-gray-200 dark:border-gray-700 flex items-center justify-center mb-6 group-hover:border-primary group-hover:shadow-lg group-hover:shadow-primary/10 transition-all duration-500 relative">
+                            <div
+                                class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shadow-md">
+                                02</div>
+                            <span
+                                class="material-icons-outlined text-4xl text-primary/70 group-hover:text-primary group-hover:scale-110 transition-all duration-300">edit_note</span>
+                        </div>
+                        <h3 class="font-display text-lg text-text-light dark:text-white mb-2">Planejamento
+                            Personalizado</h3>
+                        <p
+                            class="text-muted-light dark:text-muted-dark text-sm font-light leading-relaxed max-w-[250px]">
+                            Criamos um plano de tratamento exclusivo, explicando cada etapa, produto utilizado e
+                            resultado esperado.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center text-center group"
+                        :class="animated ? 'journey-step-active' : 'journey-step-idle'"
+                        :style="animated ? 'transition-delay: 1.3s' : ''">
+                        <div
+                            class="w-[120px] h-[120px] rounded-full bg-surface-light dark:bg-surface-dark border-2 border-gray-200 dark:border-gray-700 flex items-center justify-center mb-6 group-hover:border-primary group-hover:shadow-lg group-hover:shadow-primary/10 transition-all duration-500 relative">
+                            <div
+                                class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shadow-md">
+                                03</div>
+                            <span
+                                class="material-icons-outlined text-4xl text-primary/70 group-hover:text-primary group-hover:scale-110 transition-all duration-300">spa</span>
+                        </div>
+                        <h3 class="font-display text-lg text-text-light dark:text-white mb-2">O Procedimento</h3>
+                        <p
+                            class="text-muted-light dark:text-muted-dark text-sm font-light leading-relaxed max-w-[250px]">
+                            Realizamos o tratamento com máximo conforto, segurança e as técnicas mais avançadas do
+                            mercado.
+                        </p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flex flex-col items-center text-center group"
+                        :class="animated ? 'journey-step-active' : 'journey-step-idle'"
+                        :style="animated ? 'transition-delay: 1.8s' : ''">
+                        <div
+                            class="w-[120px] h-[120px] rounded-full bg-surface-light dark:bg-surface-dark border-2 border-gray-200 dark:border-gray-700 flex items-center justify-center mb-6 group-hover:border-primary group-hover:shadow-lg group-hover:shadow-primary/10 transition-all duration-500 relative">
+                            <div
+                                class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shadow-md">
+                                04</div>
+                            <span
+                                class="material-icons-outlined text-4xl text-primary/70 group-hover:text-primary group-hover:scale-110 transition-all duration-300">favorite</span>
+                        </div>
+                        <h3 class="font-display text-lg text-text-light dark:text-white mb-2">Acompanhamento Pós
+                        </h3>
+                        <p
+                            class="text-muted-light dark:text-muted-dark text-sm font-light leading-relaxed max-w-[250px]">
+                            Mantemos contato próximo para garantir sua recuperação ideal e a satisfação com os
+                            resultados obtidos.
+                        </p>
                     </div>
                 </div>
-                <div class="space-y-6">
-                    <h3 class="font-display text-3xl text-text-light dark:text-white">A arte de suavizar o tempo</h3>
-                    <p class="text-muted-light dark:text-muted-dark leading-relaxed font-light">
-                        Nossos tratamentos buscam a harmonia facial, respeitando suas características únicas.
-                        Acreditamos que a verdadeira estética facial não altera quem você é, mas realça a sua melhor
-                        versão.
-                    </p>
-                    <ul class="space-y-4 pt-4">
-                        <li class="flex items-center text-text-light dark:text-gray-300">
-                            <span class="material-icons-outlined text-primary mr-3">check_circle</span>
-                            <span>Resultados sutis e naturais</span>
-                        </li>
-                        <li class="flex items-center text-text-light dark:text-gray-300">
-                            <span class="material-icons-outlined text-primary mr-3">check_circle</span>
-                            <span>Recuperação otimizada</span>
-                        </li>
-                        <li class="flex items-center text-text-light dark:text-gray-300">
-                            <span class="material-icons-outlined text-primary mr-3">check_circle</span>
-                            <span>Segurança em cada etapa</span>
-                        </li>
-                    </ul>
-                    <div class="pt-6">
-                        <a class="text-primary hover:text-primary-dark font-medium uppercase tracking-widest text-sm border-b border-primary pb-1 inline-block"
-                            href="#procedures">Ver todos os tratamentos</a>
-                    </div>
-                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <a href="https://wa.me/557197064582?text=Ol%C3%A1%2C%20quero%20marcar%20uma%20consulta%20com%20a%20Dra.%20Lara%20Pires"
+                    target="_blank" rel="noopener"
+                    class="px-8 py-4 bg-primary text-surface-dark font-medium uppercase tracking-widest text-sm hover:bg-white hover:text-text-light border border-primary transition-colors duration-300 rounded-sm inline-block">
+                    Iniciar Minha Jornada
+                </a>
             </div>
         </div>
     </section>
 
     <section class="py-24 bg-surface-light dark:bg-surface-dark" id="procedures">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div
-                class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-gray-200 dark:border-gray-700 pb-8">
-                <div class="max-w-2xl">
-                    <span
-                        class="text-primary text-sm uppercase tracking-[0.2em] font-medium block mb-3">Especialidades</span>
-                    <h2 class="font-display text-4xl text-text-light dark:text-white">Procedimentos Realizados</h2>
-                </div>
-
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span
+                    class="text-primary text-sm uppercase tracking-[0.2em] font-medium block mb-3">Especialidades</span>
+                <h2 class="font-display text-4xl md:text-5xl text-text-light dark:text-white mb-6">Procedimentos
+                    Realizados</h2>
+                <div class="w-24 h-0.5 bg-primary mx-auto"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Featured Procedures: 2x2 Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Full Face -->
+                <div
+                    class="group relative bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div class="h-[500px] overflow-hidden">
+                        <img alt="Full Face"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            src="assets/procedimentos/fullface.jpg" />
+                    </div>
+                    <div class="p-6 relative bg-background-light dark:bg-background-dark z-10 -mt-12 mx-4 shadow-sm">
+                        <h3
+                            class="font-display text-lg mb-2 dark:text-white group-hover:text-primary transition-colors">
+                            Full Face</h3>
+                        <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide mb-4">Estético
+                        </p>
+                        <a class="text-primary text-sm font-medium flex items-center group/link" href="full-face.html">
+                            Saiba mais <span
+                                class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
                 <!-- Blefaroplastia -->
                 <div
                     class="group relative bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
@@ -355,108 +487,8 @@
                             Blefaroplastia</h3>
                         <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide mb-4">Cirúrgico
                         </p>
-                        <a class="text-primary text-sm font-medium flex items-center group/link" href="#">
-                            Saiba mais <span
-                                class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
-                    </div>
-                </div>
-                <!-- Peeling -->
-                <div
-                    class="group relative bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
-                    <div class="h-[500px] overflow-hidden">
-                        <img alt="Peeling Químico"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                            src="assets/procedimentos/peeling.jpg" />
-                    </div>
-                    <div class="p-6 relative bg-background-light dark:bg-background-dark z-10 -mt-12 mx-4 shadow-sm">
-                        <h3
-                            class="font-display text-lg mb-2 dark:text-white group-hover:text-primary transition-colors">
-                            Peeling Químico</h3>
-                        <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide mb-4">Estético
-                        </p>
-                        <a class="text-primary text-sm font-medium flex items-center group/link" href="#">
-                            Saiba mais <span
-                                class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
-                    </div>
-                </div>
-                <!-- Full Face (Updated) -->
-                <div
-                    class="group relative bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
-                    <div class="h-[500px] overflow-hidden">
-                        <img alt="Full Face"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                            src="assets/procedimentos/fullface.jpg" />
-                    </div>
-                    <div class="p-6 relative bg-background-light dark:bg-background-dark z-10 -mt-12 mx-4 shadow-sm">
-                        <h3
-                            class="font-display text-lg mb-2 dark:text-white group-hover:text-primary transition-colors">
-                            Full Face</h3>
-                        <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide mb-4">Estético
-                        </p>
-                        <a class="text-primary text-sm font-medium flex items-center group/link" href="#">
-                            Saiba mais <span
-                                class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
-                    </div>
-                </div>
-                <!-- Bioestimuladores -->
-                <div
-                    class="group relative bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
-                    <div class="h-[500px] overflow-hidden">
-                        <img alt="Bioestimuladores"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                            src="assets/procedimentos/bioestumulador.jpg" />
-                    </div>
-                    <div class="p-6 relative bg-background-light dark:bg-background-dark z-10 -mt-12 mx-4 shadow-sm">
-                        <h3
-                            class="font-display text-lg mb-2 dark:text-white group-hover:text-primary transition-colors">
-                            Bioestimuladores</h3>
-                        <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide mb-4">Injetável
-                        </p>
-                        <a class="text-primary text-sm font-medium flex items-center group/link" href="#">
-                            Saiba mais <span
-                                class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
-                    </div>
-                </div>
-                <!-- Fios de PDO (New) -->
-                <div
-                    class="group relative bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
-                    <div class="h-[500px] overflow-hidden">
-                        <img alt="Fios de PDO"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                            src="assets/procedimentos/fullface.jpg" /> <!-- Placeholder -->
-                    </div>
-                    <div class="p-6 relative bg-background-light dark:bg-background-dark z-10 -mt-12 mx-4 shadow-sm">
-                        <h3
-                            class="font-display text-lg mb-2 dark:text-white group-hover:text-primary transition-colors">
-                            Fios de PDO</h3>
-                        <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide mb-4">Estético
-                        </p>
-                        <a class="text-primary text-sm font-medium flex items-center group/link" href="#">
-                            Saiba mais <span
-                                class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
-                    </div>
-                </div>
-                <!-- Microagulhamento (New) -->
-                <div
-                    class="group relative bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
-                    <div class="h-[500px] overflow-hidden">
-                        <img alt="Microagulhamento"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                            src="assets/procedimentos/peeling.jpg" /> <!-- Placeholder -->
-                    </div>
-                    <div class="p-6 relative bg-background-light dark:bg-background-dark z-10 -mt-12 mx-4 shadow-sm">
-                        <h3
-                            class="font-display text-lg mb-2 dark:text-white group-hover:text-primary transition-colors">
-                            Microagulhamento</h3>
-                        <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide mb-4">Estético
-                        </p>
                         <a class="text-primary text-sm font-medium flex items-center group/link"
-                            href="microagulhamento.html">
+                            href="blefaroplastia.html">
                             Saiba mais <span
                                 class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
                         </a>
@@ -505,120 +537,106 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="py-24 bg-background-light dark:bg-background-dark overflow-hidden" id="about">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-5 grid grid-cols-2 gap-4 group">
-                    <div class="space-y-4 mt-8">
-                        <!-- About Images Updated -->
-                        <div
-                            class="overflow-hidden rounded-lg shadow-md w-full h-64 relative transition-all duration-500 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl hover:z-20 cursor-pointer group-hover:opacity-70 hover:!opacity-100">
-                            <img alt="Dra Lara Casual" class="w-full h-full object-cover"
-                                src="assets/profissional/WhatsApp Image 2026-02-10 at 12.31.40-1.jpeg" />
-                        </div>
-                        <div
-                            class="overflow-hidden rounded-lg shadow-md w-full h-48 relative transition-all duration-500 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl hover:z-20 cursor-pointer group-hover:opacity-70 hover:!opacity-100">
-                            <img alt="Dra Lara Sorrindo" class="w-full h-full object-cover"
-                                src="assets/profissional/WhatsApp Image 2026-02-10 at 12.31.40.jpeg" />
-                        </div>
-                    </div>
-                    <div class="space-y-4">
-                        <div
-                            class="overflow-hidden rounded-lg shadow-md w-full h-48 relative transition-all duration-500 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl hover:z-20 cursor-pointer group-hover:opacity-70 hover:!opacity-100">
-                            <img alt="Dra Lara no Escritório" class="w-full h-full object-cover"
-                                src="assets/profissional/WhatsApp Image 2026-02-10 at 12.31.40 (1).jpeg" />
-                        </div>
-                        <div
-                            class="overflow-hidden rounded-lg shadow-md w-full h-64 relative transition-all duration-500 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl hover:z-20 cursor-pointer group-hover:opacity-70 hover:!opacity-100">
-                            <img alt="Dra Lara em Pé" class="w-full h-full object-cover"
-                                src="assets/profissional/WhatsApp Image 2026-02-10 at 12.31.39 (1).jpeg" />
-                        </div>
-                    </div>
+            <!-- Separator: E muito mais -->
+            <div class="mt-16 mb-12 text-center">
+                <div class="flex items-center justify-center gap-6">
+                    <div class="w-24 h-[1px] bg-gray-300 dark:bg-gray-600"></div>
+                    <span class="font-display text-2xl md:text-3xl italic text-primary">e muito mais</span>
+                    <div class="w-24 h-[1px] bg-gray-300 dark:bg-gray-600"></div>
                 </div>
-                <div class="lg:col-span-7 lg:pl-12">
-                    <span class="text-primary text-sm uppercase tracking-[0.2em] font-medium block mb-3">Sobre a
-                        Médica</span>
-                    <h2 class="font-display text-4xl lg:text-5xl text-text-light dark:text-white mb-6">Dra. Lara Pires
-                    </h2>
-                    <h3 class="font-body text-xl text-muted-light dark:text-muted-dark font-light mb-8">CRM 28229 |
-                        RQE19486</h3>
-                    <div class="prose prose-lg dark:prose-invert text-muted-light dark:text-muted-dark font-light mb-8">
-                        <p>
-                            Formada pela Universidade Federal da Bahia e especialista em tratamentos faciais e
-                            corporais, a Dra. Lara Pires dedica sua carreira a entender a beleza de forma integral.
-                        </p>
-                        <p>
-                            "Após anos atuando na medicina estética, o meu propósito sempre foi ressaltar o brilho
-                            escondido em cada face. Suavizar os sinais do tempo na pele e/ou embelezar quando há
-                            necessidade estrutural - sempre mantendo a naturalidade desses processos - são preceitos
-                            básicos na minha prática clínica."
-                        </p>
-                    </div>
-                    <div class="flex items-center space-x-6">
-                        <a class="px-8 py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors uppercase tracking-widest text-sm font-medium"
-                            href="#contact">
-                            Entre em Contato
-                        </a>
-                        <div class="flex space-x-4">
-                            <a class="text-gray-400 hover:text-primary transition-colors"
-                                href="https://www.instagram.com/dralarapires" target="_blank" rel="noopener"><span
-                                    class="material-icons-outlined">camera_alt</span></a>
-                            <a class="text-gray-400 hover:text-primary transition-colors"
-                                href="https://www.tiktok.com/@dralarapires" target="_blank" rel="noopener"><span
-                                    class="material-icons-outlined">music_note</span></a>
-                            <a class="text-gray-400 hover:text-primary transition-colors"
-                                href="https://www.youtube.com/@Dralarapires" target="_blank" rel="noopener"><span
-                                    class="material-icons-outlined">play_circle</span></a>
-                        </div>
-                    </div>
-                </div>
+            </div>
+
+            <!-- Secondary Procedures: Compact cards without images -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Peeling Químico -->
+                <a href="peeling-quimico.html"
+                    class="group p-6 bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-700 hover:border-primary hover:shadow-lg transition-all duration-300 text-center">
+                    <span
+                        class="material-icons-outlined text-3xl text-primary/60 group-hover:text-primary group-hover:scale-110 transition-all duration-300 block mb-3">face_retouching_natural</span>
+                    <h3
+                        class="font-display text-base text-text-light dark:text-white mb-1 group-hover:text-primary transition-colors">
+                        Peeling Químico</h3>
+                    <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide">Estético</p>
+                </a>
+                <!-- Bioestimuladores -->
+                <a href="bioestimuladores.html"
+                    class="group p-6 bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-700 hover:border-primary hover:shadow-lg transition-all duration-300 text-center">
+                    <span
+                        class="material-icons-outlined text-3xl text-primary/60 group-hover:text-primary group-hover:scale-110 transition-all duration-300 block mb-3">science</span>
+                    <h3
+                        class="font-display text-base text-text-light dark:text-white mb-1 group-hover:text-primary transition-colors">
+                        Bioestimuladores</h3>
+                    <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide">Injetável</p>
+                </a>
+                <!-- Fios de PDO -->
+                <a href="fios-de-pdo.html"
+                    class="group p-6 bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-700 hover:border-primary hover:shadow-lg transition-all duration-300 text-center">
+                    <span
+                        class="material-icons-outlined text-3xl text-primary/60 group-hover:text-primary group-hover:scale-110 transition-all duration-300 block mb-3">straighten</span>
+                    <h3
+                        class="font-display text-base text-text-light dark:text-white mb-1 group-hover:text-primary transition-colors">
+                        Fios de PDO</h3>
+                    <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide">Estético</p>
+                </a>
+                <!-- Microagulhamento -->
+                <a href="microagulhamento.html"
+                    class="group p-6 bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-700 hover:border-primary hover:shadow-lg transition-all duration-300 text-center">
+                    <span
+                        class="material-icons-outlined text-3xl text-primary/60 group-hover:text-primary group-hover:scale-110 transition-all duration-300 block mb-3">healing</span>
+                    <h3
+                        class="font-display text-base text-text-light dark:text-white mb-1 group-hover:text-primary transition-colors">
+                        Microagulhamento</h3>
+                    <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wide">Estético</p>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- NEW SECTION: Sobre o Espaço -->
-    <section class="py-24 bg-surface-light dark:bg-surface-dark" id="space">
+    <section class="py-24 bg-background-light dark:bg-background-dark">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-primary text-sm uppercase tracking-[0.2em] font-medium block mb-3">Conforto e
-                    Sofisticação</span>
-                <h2 class="font-display text-4xl md:text-5xl text-text-light dark:text-white mb-6">Nosso Espaço</h2>
-                <p class="font-body text-muted-light dark:text-muted-dark text-lg font-light">
-                    Um ambiente pensado para o seu bem-estar, unindo tecnologia de ponta e acolhimento em cada detalhe.
-                </p>
-                <div class="w-24 h-0.5 bg-primary mx-auto mt-6"></div>
+                <span
+                    class="text-primary text-sm uppercase tracking-[0.2em] font-medium block mb-3">Transformação</span>
+                <h2 class="font-display text-4xl md:text-5xl text-text-light dark:text-white mb-6">Resultados que
+                    Inspiram</h2>
+                <div class="w-24 h-0.5 bg-primary mx-auto"></div>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="group relative overflow-hidden rounded-lg shadow-md h-64">
-                    <img src="assets/ambiente/WhatsApp Image 2026-02-10 at 12.30.54.jpeg" alt="Ambiente da Clínica"
-                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="relative group cursor-pointer overflow-hidden rounded-lg shadow-xl">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10"></div>
+                    <img alt="Comparativo Antes e Depois" class="w-full h-[400px] object-cover"
+                        src="assets/before-after.jpg" />
+                    <div class="absolute bottom-6 left-6 z-20">
+                        <p class="text-white font-display text-2xl">Rejuvenescimento</p>
+                        <p class="text-gray-200 text-sm font-light">Bioestimuladores de Colágeno</p>
+                    </div>
                 </div>
-                <div class="group relative overflow-hidden rounded-lg shadow-md h-64">
-                    <img src="assets/ambiente/WhatsApp Image 2026-02-10 at 12.30.55 (10).jpeg"
-                        alt="Detalhes do Consultório"
-                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-                </div>
-                <div class="group relative overflow-hidden rounded-lg shadow-md h-64">
-                    <img src="assets/ambiente/WhatsApp Image 2026-02-10 at 12.30.55 (4).jpeg" alt="Recepção"
-                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-                </div>
-                <div class="group relative overflow-hidden rounded-lg shadow-md h-64 lg:col-span-2">
-                    <img src="assets/ambiente/WhatsApp Image 2026-02-10 at 12.30.55 (7).jpeg"
-                        alt="Sala de Procedimentos"
-                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-                </div>
-                <div class="group relative overflow-hidden rounded-lg shadow-md h-64">
-                    <img src="assets/ambiente/WhatsApp Image 2026-02-10 at 12.30.55.jpeg" alt="Detalhes de Decoração"
-                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                <div class="space-y-6">
+                    <h3 class="font-display text-3xl text-text-light dark:text-white">A arte de suavizar o tempo</h3>
+                    <p class="text-muted-light dark:text-muted-dark leading-relaxed font-light">
+                        Nossos tratamentos buscam a harmonia facial, respeitando suas características únicas.
+                        Acreditamos que a verdadeira estética facial não altera quem você é, mas realça a sua melhor
+                        versão.
+                    </p>
+                    <ul class="space-y-4 pt-4">
+                        <li class="flex items-center text-text-light dark:text-gray-300">
+                            <span class="material-icons-outlined text-primary mr-3">check_circle</span>
+                            <span>Resultados sutis e naturais</span>
+                        </li>
+                        <li class="flex items-center text-text-light dark:text-gray-300">
+                            <span class="material-icons-outlined text-primary mr-3">check_circle</span>
+                            <span>Recuperação otimizada</span>
+                        </li>
+                        <li class="flex items-center text-text-light dark:text-gray-300">
+                            <span class="material-icons-outlined text-primary mr-3">check_circle</span>
+                            <span>Segurança em cada etapa</span>
+                        </li>
+                    </ul>
+                    <div class="pt-6">
+                        <a class="text-primary hover:text-primary-dark font-medium uppercase tracking-widest text-sm border-b border-primary pb-1 inline-block"
+                            href="#procedures">Ver todos os tratamentos</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -747,6 +765,322 @@
                 </div>
             </div>
     </section>
+
+    <!-- Blog Section -->
+    <section class="py-24 bg-background-light dark:bg-background-dark overflow-hidden" id="about">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 grid grid-cols-2 gap-4 group">
+                    <div class="space-y-4 mt-8">
+                        <!-- About Images Updated -->
+                        <div
+                            class="overflow-hidden rounded-lg shadow-md w-full h-64 relative transition-all duration-500 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl hover:z-20 cursor-pointer group-hover:opacity-70 hover:!opacity-100">
+                            <img alt="Dra Lara Casual" class="w-full h-full object-cover"
+                                src="assets/profissional/WhatsApp Image 2026-02-10 at 12.31.40-1.jpeg" />
+                        </div>
+                        <div
+                            class="overflow-hidden rounded-lg shadow-md w-full h-48 relative transition-all duration-500 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl hover:z-20 cursor-pointer group-hover:opacity-70 hover:!opacity-100">
+                            <img alt="Dra Lara Sorrindo" class="w-full h-full object-cover"
+                                src="assets/profissional/WhatsApp Image 2026-02-10 at 12.31.40.jpeg" />
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div
+                            class="overflow-hidden rounded-lg shadow-md w-full h-48 relative transition-all duration-500 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl hover:z-20 cursor-pointer group-hover:opacity-70 hover:!opacity-100">
+                            <img alt="Dra Lara no Escritório" class="w-full h-full object-cover"
+                                src="assets/profissional/WhatsApp Image 2026-02-10 at 12.31.40 (1).jpeg" />
+                        </div>
+                        <div
+                            class="overflow-hidden rounded-lg shadow-md w-full h-64 relative transition-all duration-500 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl hover:z-20 cursor-pointer group-hover:opacity-70 hover:!opacity-100">
+                            <img alt="Dra Lara em Pé" class="w-full h-full object-cover"
+                                src="assets/profissional/WhatsApp Image 2026-02-10 at 12.31.39 (1).jpeg" />
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 lg:pl-12">
+                    <span class="text-primary text-sm uppercase tracking-[0.2em] font-medium block mb-3">Sobre a
+                        Médica</span>
+                    <h2 class="font-display text-4xl lg:text-5xl text-text-light dark:text-white mb-6">Dra. Lara Pires
+                    </h2>
+                    <h3 class="font-body text-xl text-muted-light dark:text-muted-dark font-light mb-8">CRM 28229 |
+                        RQE19486</h3>
+                    <div class="prose prose-lg dark:prose-invert text-muted-light dark:text-muted-dark font-light mb-8">
+                        <p>
+                            Formada pela Universidade Federal da Bahia e especialista em tratamentos faciais e
+                            corporais, a Dra. Lara Pires dedica sua carreira a entender a beleza de forma integral.
+                        </p>
+                        <p>
+                            "Após anos atuando na medicina estética, o meu propósito sempre foi ressaltar o brilho
+                            escondido em cada face. Suavizar os sinais do tempo na pele e/ou embelezar quando há
+                            necessidade estrutural - sempre mantendo a naturalidade desses processos - são preceitos
+                            básicos na minha prática clínica."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-6">
+                        <a class="px-8 py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors uppercase tracking-widest text-sm font-medium"
+                            href="#contact">
+                            Entre em Contato
+                        </a>
+                        <div class="flex space-x-4">
+                            <a class="text-gray-400 hover:text-primary transition-colors"
+                                href="https://www.instagram.com/dralarapiresn" target="_blank" rel="noopener"><span
+                                    class="material-icons-outlined">camera_alt</span></a>
+                            <a class="text-gray-400 hover:text-primary transition-colors"
+                                href="https://www.tiktok.com/@dralarapires" target="_blank" rel="noopener"><span
+                                    class="material-icons-outlined">music_note</span></a>
+                            <a class="text-gray-400 hover:text-primary transition-colors"
+                                href="https://www.youtube.com/@Dralarapires" target="_blank" rel="noopener"><span
+                                    class="material-icons-outlined">play_circle</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Sobre o Espaço -->
+    <section class="py-24 bg-surface-light dark:bg-surface-dark" id="space">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary text-sm uppercase tracking-[0.2em] font-medium block mb-3">Conforto e
+                    Sofisticação</span>
+                <h2 class="font-display text-4xl md:text-5xl text-text-light dark:text-white mb-6">Nosso Espaço</h2>
+                <p class="font-body text-muted-light dark:text-muted-dark text-lg font-light">
+                    Um ambiente pensado para o seu bem-estar, unindo tecnologia de ponta e acolhimento em cada detalhe.
+                </p>
+                <div class="w-24 h-0.5 bg-primary mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden rounded-lg shadow-md h-64">
+                    <img src="assets/ambiente/WhatsApp Image 2026-02-10 at 12.30.54.jpeg" alt="Ambiente da Clínica"
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-md h-64">
+                    <img src="assets/ambiente/WhatsApp Image 2026-02-10 at 12.30.55 (10).jpeg"
+                        alt="Detalhes do Consultório"
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-md h-64">
+                    <img src="assets/ambiente/WhatsApp Image 2026-02-10 at 12.30.55 (4).jpeg" alt="Recepção"
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-md h-64 lg:col-span-2">
+                    <img src="assets/ambiente/WhatsApp Image 2026-02-10 at 12.30.55 (7).jpeg"
+                        alt="Sala de Procedimentos"
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-md h-64">
+                    <img src="assets/ambiente/WhatsApp Image 2026-02-10 at 12.30.55.jpeg" alt="Detalhes de Decoração"
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- NEW SECTION: Nossa Jornada -->
+    <section class="py-24 bg-background-light dark:bg-background-dark" id="faq">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary text-sm uppercase tracking-[0.2em] font-medium block mb-3">Tire Suas
+                    Dúvidas</span>
+                <h2 class="font-display text-4xl md:text-5xl text-text-light dark:text-white mb-6">Perguntas Frequentes
+                </h2>
+                <div class="w-24 h-0.5 bg-primary mx-auto"></div>
+            </div>
+
+            <div class="space-y-4" x-data="{ openItems: [1, 2, 3, 4] }">
+                <!-- FAQ Item 1 -->
+                <div class="border border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark">
+                    <button
+                        @click="openItems.includes(1) ? openItems = openItems.filter(x => x !== 1) : openItems.push(1)"
+                        class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-display text-lg text-text-light dark:text-white">Os procedimentos estéticos
+                            são dolorosos?</span>
+                        <span class="material-icons-outlined text-primary transform transition-transform duration-300"
+                            :class="openItems.includes(1) ? 'rotate-180' : ''">expand_more</span>
+                    </button>
+                    <div x-show="openItems.includes(1)" x-collapse>
+                        <div class="px-6 pb-5 text-muted-light dark:text-muted-dark font-light leading-relaxed">
+                            O conforto do paciente é nossa prioridade. Utilizamos anestésicos tópicos de alta eficácia e
+                            técnicas avançadas para minimizar qualquer desconforto. A maioria dos pacientes relata
+                            apenas uma leve sensibilidade durante os procedimentos.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark">
+                    <button
+                        @click="openItems.includes(2) ? openItems = openItems.filter(x => x !== 2) : openItems.push(2)"
+                        class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-display text-lg text-text-light dark:text-white">Qual o tempo de recuperação
+                            (downtime)?</span>
+                        <span class="material-icons-outlined text-primary transform transition-transform duration-300"
+                            :class="openItems.includes(2) ? 'rotate-180' : ''">expand_more</span>
+                    </button>
+                    <div x-show="openItems.includes(2)" x-collapse>
+                        <div class="px-6 pb-5 text-muted-light dark:text-muted-dark font-light leading-relaxed">
+                            O tempo de recuperação varia de acordo com o procedimento. Tratamentos injetáveis como
+                            toxina botulínica e bioestimuladores quase não tem downtime, permitindo o retorno imediato
+                            às atividades. Procedimentos como peelings profundos ou blefaroplastia exigem alguns dias de
+                            repouso, o que será detalhado na sua consulta.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark">
+                    <button
+                        @click="openItems.includes(3) ? openItems = openItems.filter(x => x !== 3) : openItems.push(3)"
+                        class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-display text-lg text-text-light dark:text-white">Os resultados ficam
+                            artificiais ou exagerados?</span>
+                        <span class="material-icons-outlined text-primary transform transition-transform duration-300"
+                            :class="openItems.includes(3) ? 'rotate-180' : ''">expand_more</span>
+                    </button>
+                    <div x-show="openItems.includes(3)" x-collapse>
+                        <div class="px-6 pb-5 text-muted-light dark:text-muted-dark font-light leading-relaxed">
+                            A nossa principal premissa na clínica é a **naturalidade**. O objetivo nunca é transformar o
+                            seu rosto em outra pessoa, mas sim realçar a sua beleza natural, suavizando sinais de
+                            cansaço ou envelhecimento de forma extremamente elegante e equilibrada, utilizando o
+                            conceito Full Face.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="border border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark">
+                    <button
+                        @click="openItems.includes(4) ? openItems = openItems.filter(x => x !== 4) : openItems.push(4)"
+                        class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-display text-lg text-text-light dark:text-white">Como sei qual é o melhor
+                            procedimento para mim?</span>
+                        <span class="material-icons-outlined text-primary transform transition-transform duration-300"
+                            :class="openItems.includes(4) ? 'rotate-180' : ''">expand_more</span>
+                    </button>
+                    <div x-show="openItems.includes(4)" x-collapse>
+                        <div class="px-6 pb-5 text-muted-light dark:text-muted-dark font-light leading-relaxed">
+                            O primeiro passo é sempre a **Consulta de Avaliação Global**. É nela que avaliamos a sua
+                            anatomia, a qualidade da sua pele e as suas expectativas. A partir disso, criamos um plano
+                            de tratamento exclusivo e personalizado para o seu caso.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-muted-light dark:text-muted-dark mb-4">Ainda tem dúvidas?</p>
+                <a href="https://wa.me/557197064582?text=Ol%C3%A1%2C%20quero%20marcar%20uma%20consulta%20com%20a%20Dra.%20Lara%20Pires"
+                    target="_blank" rel="noopener"
+                    class="text-primary hover:text-white font-medium uppercase tracking-widest text-sm border-b border-primary hover:border-white transition-colors pb-1 inline-block">Fale
+                    conosco no WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-surface-light dark:bg-surface-dark" id="blog">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary text-sm uppercase tracking-[0.2em] font-medium block mb-3">Conteúdo
+                    Exclusivo</span>
+                <h2 class="font-display text-4xl md:text-5xl text-text-light dark:text-white mb-6">Últimos Artigos</h2>
+                <div class="w-24 h-0.5 bg-primary mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Blog Card 1 -->
+                <article
+                    class="group bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="assets/procedimentos/bioestumulador.jpg" alt="Bioestimuladores de Colágeno"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-primary text-xs font-bold uppercase tracking-widest mb-3">Pele</p>
+                        <h3
+                            class="font-display text-xl text-text-light dark:text-white mb-3 group-hover:text-primary transition-colors">
+                            A revolução dos Bioestimuladores de Colágeno</h3>
+                        <p class="text-muted-light dark:text-muted-dark font-light text-sm mb-6 line-clamp-3">
+                            Entenda como esses tratamentos estimulam a produção natural de colágeno, devolvendo a
+                            firmeza e a juventude da pele de forma progressiva e natural.
+                        </p>
+                        <a href="artigo-modelo.html"
+                            class="text-primary text-sm font-medium flex items-center group/link">
+                            Ler artigo <span
+                                class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article
+                    class="group bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="assets/procedimentos/fullface.jpg" alt="Abordagem Full Face"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-primary text-xs font-bold uppercase tracking-widest mb-3">Harmonização</p>
+                        <h3
+                            class="font-display text-xl text-text-light dark:text-white mb-3 group-hover:text-primary transition-colors">
+                            O segredo do conceito Full Face</h3>
+                        <p class="text-muted-light dark:text-muted-dark font-light text-sm mb-6 line-clamp-3">
+                            Por que tratar o rosto como um todo entrega resultados muito mais harmoniosos e elegantes do
+                            que focar em áreas isoladas.
+                        </p>
+                        <a href="artigo-modelo.html"
+                            class="text-primary text-sm font-medium flex items-center group/link">
+                            Ler artigo <span
+                                class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 3 -->
+                <article
+                    class="group bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="assets/procedimentos/peeling.jpg" alt="Cuidados Pós-Procedimento"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-primary text-xs font-bold uppercase tracking-widest mb-3">Skincare</p>
+                        <h3
+                            class="font-display text-xl text-text-light dark:text-white mb-3 group-hover:text-primary transition-colors">
+                            Rotina de cuidados essenciais pós-procedimento</h3>
+                        <p class="text-muted-light dark:text-muted-dark font-light text-sm mb-6 line-clamp-3">
+                            Descubra quais são os passos indispensáveis para maximizar os resultados dos seus
+                            tratamentos estéticos e manter a pele saudável.
+                        </p>
+                        <a href="artigo-modelo.html"
+                            class="text-primary text-sm font-medium flex items-center group/link">
+                            Ler artigo <span
+                                class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="artigo-modelo.html"
+                    class="inline-block px-8 py-4 border border-primary text-primary font-medium uppercase tracking-widest text-sm hover:bg-primary hover:text-white transition-colors duration-300">
+                    Ver todos os artigos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
     <footer class="bg-background-dark text-white pt-20 pb-10 border-t border-gray-800" id="contact">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
@@ -759,7 +1093,7 @@
                     </p>
                     <div class="flex space-x-4">
                         <a class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-primary hover:border-primary transition-all"
-                            href="https://www.instagram.com/dralarapires" target="_blank" rel="noopener">
+                            href="https://www.instagram.com/dralarapiresn" target="_blank" rel="noopener">
                             <span class="material-icons-outlined text-lg">camera_alt</span>
                         </a>
                         <a class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-primary hover:border-primary transition-all"
@@ -771,7 +1105,8 @@
                             <span class="material-icons-outlined text-lg">play_circle</span>
                         </a>
                         <a class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-primary hover:border-primary transition-all"
-                            href="https://wa.me/557197064582" target="_blank" rel="noopener">
+                            href="https://wa.me/557197064582?text=Ol%C3%A1%2C%20quero%20marcar%20uma%20consulta%20com%20a%20Dra.%20Lara%20Pires"
+                            target="_blank" rel="noopener">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
@@ -802,8 +1137,9 @@
                         </li>
                         <li class="flex items-center">
                             <span class="material-icons-outlined text-primary mr-3 text-lg">phone</span>
-                            <a href="https://wa.me/557197064582" target="_blank" rel="noopener"
-                                class="hover:text-white transition-colors">(71) 9706-4582</a>
+                            <a href="https://wa.me/557197064582?text=Ol%C3%A1%2C%20quero%20marcar%20uma%20consulta%20com%20a%20Dra.%20Lara%20Pires"
+                                target="_blank" rel="noopener" class="hover:text-white transition-colors">(71)
+                                9706-4582</a>
                         </li>
                         <li class="flex items-center">
                             <span class="material-icons-outlined text-primary mr-3 text-lg">schedule</span>
@@ -821,7 +1157,8 @@
                         Entre em contato para verificar disponibilidade de horários.
                     </p>
                     <a class="w-full block text-center bg-primary hover:bg-primary-dark text-white py-3 text-sm uppercase tracking-widest font-medium transition-colors"
-                        href="https://wa.me/557197064582" target="_blank" rel="noopener">
+                        href="https://wa.me/557197064582?text=Ol%C3%A1%2C%20quero%20marcar%20uma%20consulta%20com%20a%20Dra.%20Lara%20Pires"
+                        target="_blank" rel="noopener">
                         Falar no WhatsApp
                     </a>
                 </div>
@@ -903,6 +1240,20 @@
             }
         }
     </script>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/557197064582?text=Ol%C3%A1%2C%20quero%20marcar%20uma%20consulta%20com%20a%20Dra.%20Lara%20Pires"
+        target="_blank" rel="noopener noreferrer"
+        class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg shadow-black/30 hover:scale-110 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center group"
+        aria-label="Falar no WhatsApp">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        <span
+            class="absolute right-full mr-4 bg-[#1A1A1A] text-white text-xs font-medium px-3 py-1.5 rounded-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">Fale
+            Conosco</span>
+    </a>
 </body>
 
 </html>
