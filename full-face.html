@@ -48,8 +48,37 @@
             scroll-behavior: smooth;
         }
 
-        .hero-overlay {
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), transparent);
+    
+        /* Hero Stagger Animation */
+        @keyframes heroFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heroShadow {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hero-stagger {
+            opacity: 0;
+            animation: heroFadeUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        .hero-shadow-anim {
+            opacity: 0;
+            animation: heroShadow 1.5s ease-out forwards;
+            animation-delay: 0.3s;
         }
     </style>
 </head>
@@ -85,12 +114,12 @@
                         <div
                             class="absolute left-0 top-full -mt-2 w-64 bg-[#1A1A1A]/95 backdrop-blur-md border border-gray-800 shadow-xl py-2 rounded-sm transform origin-top opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                             <a href="blefaroplastia.html"
-                                class="block px-6 py-3 text-xs text-primary hover:text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Blefaroplastia</a>
+                                class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Blefaroplastia</a>
                             <a href="peeling-quimico.html"
                                 class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Peeling
                                 Químico</a>
                             <a href="full-face.html"
-                                class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Full
+                                class="block px-6 py-3 text-xs text-primary bg-white/5 transition-colors uppercase tracking-wide">Full
                                 Face</a>
                             <a href="bioestimuladores.html"
                                 class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Bioestimuladores</a>
@@ -105,7 +134,6 @@
                                 class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Preenchimento
                                 de Mento</a>
                         </div>
-</div>
                     </div>
 
                     <a class="text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors"
@@ -118,7 +146,8 @@
 
                 <!-- CTA Button -->
                 <div class="hidden md:block">
-                    <a href="index.html#contact"
+                    <a href="https://wa.me/557197064582?text=Ol%C3%A1%2C%20quero%20marcar%20uma%20consulta%20com%20a%20Dra.%20Lara%20Pires"
+                        target="_blank" rel="noopener"
                         class="px-6 py-3 bg-primary text-surface-dark text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-white transition-colors">
                         Agendar Avaliação
                     </a>
@@ -126,7 +155,8 @@
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
-                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-white hover:text-primary focus:outline-none p-2">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen"
+                        class="text-white hover:text-primary focus:outline-none p-2">
                         <span class="material-icons-outlined" x-text="mobileMenuOpen ? 'close' : 'menu'">menu</span>
                     </button>
                 </div>
@@ -134,85 +164,122 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div x-show="mobileMenuOpen" 
-             x-transition:enter="transition ease-out duration-200"
-             x-transition:enter-start="opacity-0 -translate-y-2"
-             x-transition:enter-end="opacity-100 translate-y-0"
-             x-transition:leave="transition ease-in duration-150"
-             x-transition:leave-start="opacity-100 translate-y-0"
-             x-transition:leave-end="opacity-0 -translate-y-2"
-             class="md:hidden bg-[#1A1A1A]/95 backdrop-blur-md border-b border-gray-800 absolute top-[100%] left-0 w-full shadow-xl"
-             style="display: none;">
+        <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-2"
+            class="md:hidden bg-[#1A1A1A]/95 backdrop-blur-md border-b border-gray-800 absolute top-[100%] left-0 w-full shadow-xl"
+            style="display: none;">
             <div class="px-4 pt-4 pb-6 space-y-2 bg-[#1A1A1A]">
                 <div x-data="{ openProcedimentos: false }" class="py-2 border-b border-gray-800/50">
-                    <button @click="openProcedimentos = !openProcedimentos" class="w-full flex justify-between items-center text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors py-2 focus:outline-none">
+                    <button @click="openProcedimentos = !openProcedimentos"
+                        class="w-full flex justify-between items-center text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors py-2 focus:outline-none">
                         Procedimentos
-                        <span class="material-icons-outlined text-sm transition-transform duration-300" :class="openProcedimentos ? 'rotate-180' : ''">expand_more</span>
+                        <span class="material-icons-outlined text-sm transition-transform duration-300"
+                            :class="openProcedimentos ? 'rotate-180' : ''">expand_more</span>
                     </button>
                     <div x-show="openProcedimentos" class="pl-4 py-3 space-y-4" style="display: none;" x-transition>
-                        <a @click="mobileMenuOpen = false" href="blefaroplastia.html" class="block text-xs text-primary hover:text-primary transition-colors uppercase tracking-wide">Blefaroplastia</a>
-                        <a @click="mobileMenuOpen = false" href="peeling-quimico.html" class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Peeling Químico</a>
-                        <a @click="mobileMenuOpen = false" href="full-face.html" class="block text-xs text-primary transition-colors uppercase tracking-wide">Full Face</a>
-                        <a @click="mobileMenuOpen = false" href="bioestimuladores.html" class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Bioestimuladores</a>
-                        <a @click="mobileMenuOpen = false" href="fios-de-pdo.html" class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Fios de PDO</a>
-                        <a @click="mobileMenuOpen = false" href="microagulhamento.html" class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Microagulhamento</a>
-                        <a @click="mobileMenuOpen = false" href="rinomodelacao.html" class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Rinomodelação</a>
-                        <a @click="mobileMenuOpen = false" href="preenchimento-de-mento.html" class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Preenchimento de Mento</a>
+                        <a @click="mobileMenuOpen = false" href="blefaroplastia.html"
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Blefaroplastia</a>
+                        <a @click="mobileMenuOpen = false" href="peeling-quimico.html"
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Peeling Químico</a>
+                        <a @click="mobileMenuOpen = false" href="full-face.html"
+                            class="block text-xs text-primary transition-colors uppercase tracking-wide">Full Face</a>
+                        <a @click="mobileMenuOpen = false" href="bioestimuladores.html"
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Bioestimuladores</a>
+                        <a @click="mobileMenuOpen = false" href="fios-de-pdo.html"
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Fios de PDO</a>
+                        <a @click="mobileMenuOpen = false" href="microagulhamento.html"
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Microagulhamento</a>
+                        <a @click="mobileMenuOpen = false" href="rinomodelacao.html"
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Rinomodelação</a>
+                        <a @click="mobileMenuOpen = false" href="preenchimento-de-mento.html"
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Preenchimento de Mento</a>
                     </div>
-</div>
                 </div>
-                <a @click="mobileMenuOpen = false" href="index.html#about" class="block text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors py-3 border-b border-gray-800/50">Nosso Espaço</a>
-                <a @click="mobileMenuOpen = false" href="index.html#contact" class="block text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors py-3 border-b border-gray-800/50">Contato</a>
-                <a @click="mobileMenuOpen = false" href="index.html#blog" class="block text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors py-3 border-b border-gray-800/50">Blog</a>
+                <a @click="mobileMenuOpen = false" href="index.html#about"
+                    class="block text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors py-3 border-b border-gray-800/50">Nosso
+                    Espaço</a>
+                <a @click="mobileMenuOpen = false" href="index.html#contact"
+                    class="block text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors py-3 border-b border-gray-800/50">Contato</a>
+                <a @click="mobileMenuOpen = false" href="index.html#blog"
+                    class="block text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors py-3 border-b border-gray-800/50">Blog</a>
                 <div class="pt-4 pb-2">
-                    <a @click="mobileMenuOpen = false" href="index.html#contact" class="block w-full px-6 py-4 bg-primary text-[#1A1A1A] text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-white transition-colors text-center shadow-lg">Agendar Avaliação</a>
+                    <a @click="mobileMenuOpen = false"
+                        href="https://wa.me/557197064582?text=Ol%C3%A1%2C%20quero%20marcar%20uma%20consulta%20com%20a%20Dra.%20Lara%20Pires"
+                        target="_blank" rel="noopener"
+                        class="block w-full px-6 py-4 bg-primary text-[#1A1A1A] text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-white transition-colors text-center shadow-lg">Agendar
+                        Avaliação</a>
                 </div>
             </div>
         </div>
     </nav>
     <!-- CSS Noise Overlay -->
-    <svg class="pointer-events-none fixed inset-0 z-50 h-[100dvh] w-full opacity-[0.05]"
-        xmlns="http://www.w3.org/2000/svg">
-        <filter id="noiseFilter">
-            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" />
-        </filter>
-        <rect width="100%" height="100%" filter="url(#noiseFilter)" />
-    </svg>
-
     <!-- Hero Section -->
-    <header class="relative h-[100dvh] w-full flex items-end justify-start overflow-hidden pb-32 px-6 lg:px-24">
+    <section class="relative h-screen min-h-[600px] flex items-center overflow-hidden">
+        <!-- Cinematic Noise Overlay -->
+        <svg class="pointer-events-none fixed inset-0 z-50 h-full w-full opacity-[0.03] mix-blend-overlay">
+            <filter id="noise">
+                <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch">
+                </feTurbulence>
+            </filter>
+            <rect width="100%" height="100%" filter="url(#noise)"></rect>
+        </svg>
+
+        <!-- Background Image -->
         <div class="absolute inset-0 z-0">
-            <img alt="Full Face - Dra. Lara Pires" class="w-full h-full object-cover object-top md:object-[center_25%]"
-                src="assets/hero-image.jpeg" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-        </div>
-        <div class="relative z-10 w-full max-w-4xl hero-content">
-            <h1 class="flex flex-col gap-2">
-                <span
-                    class="font-body font-bold text-4xl md:text-6xl text-white tracking-tight hero-text opacity-0 translate-y-10">Harmonia
-                    Completa encontra a</span>
-                <span
-                    class="font-display italic text-6xl md:text-8xl text-primary hero-text opacity-0 translate-y-10">Naturalidade.</span>
-            </h1>
-            <p
-                class="text-lg md:text-xl text-slate-300 font-light mt-8 mb-10 tracking-wide max-w-2xl hero-text opacity-0 translate-y-10">
-                Rejuvenescimento facial global e integrado. Combinação de técnicas avançadas para restaurar volume,
-                contorno e equilíbrio natural da face.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-6 hero-text opacity-0 translate-y-10">
-                <a class="relative overflow-hidden group bg-primary text-background-dark font-bold py-4 px-8 rounded-full transition-all duration-500 hover:scale-[1.03] text-sm uppercase tracking-widest text-center shadow-lg"
-                    href="#procedimento">
-                    <span class="relative z-10 group-hover:text-white transition-colors duration-500">Explorar o
-                        Protocolo</span>
-                    <span
-                        class="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"></span>
-                </a>
+            <picture class="w-full h-full">
+                <img src="assets/hero%20mobile%202.png" alt="Full Face - Dra. Lara Pires"
+                    class="w-full h-full object-cover object-[center_30%] md:object-[center_right_top_25%] min-[1400px]:object-[70%_25%]" />
+            </picture>
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent md:bg-gradient-to-t md:from-black/90 md:via-black/20 hero-shadow-anim">
             </div>
         </div>
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/40">
-            <span class="material-icons-outlined">expand_more</span>
+
+        <!-- Content -->
+        <div
+            class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-end pb-8 flex-1 md:pb-24">
+            <div class="max-w-2xl mt-auto pt-32 md:mt-auto md:max-w-xl">
+
+                <p class="font-body text-primary text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-2 hero-stagger"
+                    style="animation-delay: 0.4s">
+                    Harmonia Completa encontra a
+                </p>
+
+                <h1 class="font-display text-7xl md:text-8xl lg:text-[8rem] text-white leading-[0.9] mb-4 hero-stagger italic"
+                    style="animation-delay: 0.6s">
+                    Naturalidade.
+                </h1>
+
+                <p class="font-body text-gray-300 text-base md:text-lg font-light max-w-lg leading-relaxed mb-4 hero-stagger"
+                    style="animation-delay: 1.0s">
+                    Rejuvenescimento facial global e integrado. Combinação de técnicas avançadas para restaurar volume, contorno e equilíbrio natural da face.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 mb-10 hero-stagger" style="animation-delay: 1.4s">
+                    <a href="https://wa.me/557197064582?text=Ol%C3%A1%2C%20quero%20marcar%20uma%20consulta%20com%20a%20Dra.%20Lara%20Pires"
+                        target="_blank" rel="noopener"
+                        class="px-8 py-4 bg-primary text-surface-dark font-medium uppercase tracking-widest text-sm hover:bg-white transition-colors duration-300 text-center rounded-sm">
+                        Quero Rejuvenescer
+                    </a>
+                    <a href="#procedimento"
+                        class="hidden sm:flex px-8 py-4 border border-white/30 text-white font-medium uppercase tracking-widest text-sm hover:bg-white/10 transition-colors duration-300 items-center justify-center gap-2 rounded-sm group">
+                        Ver Resultados
+                        <span
+                            class="material-icons-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
         </div>
-    </header>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce hidden md:block">
+            <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
+                <div class="w-1 h-3 bg-white/50 rounded-full"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- Patient Journey Section -->
     <section class="py-32 px-6 lg:px-24 bg-background-light" id="procedimento">
