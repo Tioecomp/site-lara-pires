@@ -238,17 +238,21 @@
                         <a @click="mobileMenuOpen = false" href="blefaroplastia.html"
                             class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Blefaroplastia</a>
                         <a @click="mobileMenuOpen = false" href="full-face.html"
-                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Full Face</a>
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Full
+                            Face</a>
                         <a @click="mobileMenuOpen = false" href="rinomodelacao.html"
                             class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Rinomodelação</a>
                         <a @click="mobileMenuOpen = false" href="preenchimento-de-mento.html"
-                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Preenchimento de Mento</a>
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Preenchimento
+                            de Mento</a>
                         <a @click="mobileMenuOpen = false" href="peeling-quimico.html"
-                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Peeling Químico</a>
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Peeling
+                            Químico</a>
                         <a @click="mobileMenuOpen = false" href="bioestimuladores.html"
                             class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Bioestimuladores</a>
                         <a @click="mobileMenuOpen = false" href="fios-de-pdo.html"
-                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Fios de PDO</a>
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Fios
+                            de PDO</a>
                         <a @click="mobileMenuOpen = false" href="microagulhamento.html"
                             class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Microagulhamento</a>
                     </div>
@@ -607,13 +611,39 @@
                 <div class="w-24 h-0.5 bg-primary mx-auto"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="relative group cursor-pointer overflow-hidden rounded-lg shadow-xl">
+                <div x-data="{
+                    current: 0,
+                    flashing: false,
+                    photos: [
+                        'assets/antes%20e%20depois/home/WhatsApp%20Image%202026-02-12%20at%2017.29.31.jpeg',
+                        'assets/antes%20e%20depois/home/WhatsApp%20Image%202026-02-12%20at%2017.29.42%20(3).jpeg',
+                        'assets/antes%20e%20depois/home/WhatsApp%20Image%202026-02-12%20at%2017.29.43%20(1).jpeg',
+                        'assets/antes%20e%20depois/home/WhatsApp%20Image%202026-02-12%20at%2017.29.44%20(3).jpeg',
+                        'assets/antes%20e%20depois/home/WhatsApp%20Image%202026-02-12%20at%2017.29.46%20(1).jpeg',
+                        'assets/antes%20e%20depois/home/WhatsApp%20Image%202026-02-12%20at%2017.29.46.jpeg',
+                        'assets/antes%20e%20depois/home/WhatsApp%20Image%202026-02-12%20at%2017.29.47%20(1).jpeg',
+                        'assets/antes%20e%20depois/home/WhatsApp%20Image%202026-02-12%20at%2017.29.49%20(2).jpeg',
+                        'assets/antes%20e%20depois/home/WhatsApp%20Image%202026-02-12%20at%2017.29.50%20(1).jpeg'
+                    ],
+                    init() {
+                        setInterval(() => {
+                            this.flashing = true;
+                            setTimeout(() => {
+                                this.current = (this.current + 1) % this.photos.length;
+                                setTimeout(() => { this.flashing = false; }, 300);
+                            }, 250);
+                        }, 4000);
+                    }
+                }" class="relative group cursor-pointer overflow-hidden rounded-lg shadow-xl">
+                    <!-- Flash overlay -->
+                    <div class="absolute inset-0 z-30 bg-white transition-opacity duration-300 pointer-events-none"
+                        :class="flashing ? 'opacity-80' : 'opacity-0'"></div>
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10"></div>
-                    <img alt="Comparativo Antes e Depois" class="w-full h-[400px] object-cover"
-                        src="assets/before-after.jpg" />
+                    <img :alt="'Resultado ' + (current + 1)"
+                        class="w-full h-[400px] object-cover transition-opacity duration-500" :src="photos[current]" />
                     <div class="absolute bottom-6 left-6 z-20">
-                        <p class="text-white font-display text-2xl">Rejuvenescimento</p>
-                        <p class="text-gray-200 text-sm font-light">Bioestimuladores de Colágeno</p>
+                        <p class="text-white font-display text-2xl">Resultados Reais</p>
+                        <p class="text-gray-200 text-sm font-light">Transformações da Dra. Lara Pires</p>
                     </div>
                 </div>
                 <div class="space-y-6">
