@@ -213,7 +213,8 @@
                     <a @click="mobileMenuOpen = false"
                         href="https://wa.me/557197064582?text=Ol%C3%A1%2C%20quero%20marcar%20uma%20consulta%20com%20a%20Dra.%20Lara%20Pires"
                         target="_blank" rel="noopener"
-                        class="block w-full px-6 py-4 bg-primary text-[#1A1A1A] text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-white transition-colors text-center shadow-lg">Agendar Consulta</a>
+                        class="block w-full px-6 py-4 bg-primary text-[#1A1A1A] text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-white transition-colors text-center shadow-lg">Agendar
+                        Consulta</a>
                 </div>
             </div>
         </div>
@@ -233,8 +234,11 @@
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
             <picture class="w-full h-full">
-                <img src="assets/hero%20mobile%202.png" alt="Full Face - Dra. Lara Pires"
-                    class="w-full h-full object-cover object-[center_30%] md:object-[center_right_top_25%] min-[1400px]:object-[70%_25%]" />
+                <!-- Desktop image -->
+                <source media="(min-width: 768px)" srcset="assets/hero-desktop.webp" />
+                <!-- Using the same portrait image for mobile views -->
+                <img src="assets/hero%20mobile%202.png" alt="Dra Lara Pires"
+                    class="w-full h-full object-cover object-[center_30%] md:object-[50%_75%] min-[1400px]:object-[70%_75%]" />
             </picture>
             <div
                 class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent md:bg-gradient-to-t md:from-black/90 md:via-black/20 hero-shadow-anim">
@@ -589,8 +593,10 @@
             <p class="text-gray-500 mb-12 font-light text-lg">Agende sua avaliação personalizada com a Dra. Lara Pires e
                 descubra a precisão do nosso protocolo.</p>
             <a class="relative inline-block overflow-hidden group bg-primary text-white font-bold py-5 px-12 rounded-full transition-all duration-500 hover:scale-[1.03] text-sm uppercase tracking-widest text-center shadow-lg"
-                href="https://wa.me/557197064582?text=Ol%C3%A1%2C%20quero%20marcar%20uma%20consulta%20com%20a%20Dra.%20Lara%20Pires" target="_blank">
-                <span class="relative z-10 group-hover:text-background-light transition-colors duration-500">Agendar Consulta</span>
+                href="https://wa.me/557197064582?text=Ol%C3%A1%2C%20quero%20marcar%20uma%20consulta%20com%20a%20Dra.%20Lara%20Pires"
+                target="_blank">
+                <span class="relative z-10 group-hover:text-background-light transition-colors duration-500">Agendar
+                    Consulta</span>
                 <span
                     class="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"></span>
             </a>
