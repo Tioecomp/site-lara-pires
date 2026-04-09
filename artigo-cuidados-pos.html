@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Rotina de cuidados essenciais pós-procedimento | Dra. Lara Pires</title>
+    <meta name="description" content="Descubra quais são os passos indispensáveis para maximizar os resultados dos seus tratamentos estéticos e manter a pele saudável.">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#BCA578",
+                        "primary-dark": "#A58F63",
+                        "background-light": "#FAFAFA",
+                        "background-dark": "#1A1A1A",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#262626",
+                        "text-light": "#333333",
+                        "text-dark": "#E5E5E5",
+                        "muted-light": "#666666",
+                        "muted-dark": "#A3A3A3",
+                    },
+                    fontFamily: {
+                        "display": ["Playfair Display", "serif"],
+                        "body": ["Montserrat", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4), transparent);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body antialiased transition-colors duration-300">
+    <!-- Navbar -->
+    <nav x-data="{ scrolled: false, mobileMenuOpen: false }" @scroll.window="scrolled = (window.pageYOffset > 20)"
+        :class="{ 'bg-background-dark/95 shadow-md border-b border-gray-800': scrolled, 'bg-transparent border-transparent': !scrolled }"
+        class="fixed w-full z-50 transition-all duration-500 ease-in-out">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <div class="flex-shrink-0 flex items-center">
+                    <a class="font-display text-2xl tracking-widest text-white font-medium flex items-center gap-2 group"
+                        href="index.html">
+                        <img src="assets/logo/logo1.png" alt="Lara Pires Logo"
+                            class="h-20 w-auto object-contain brightness-0 invert group-hover:brightness-100 transition-all duration-300">
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <div class="relative group py-6 -my-6">
+                        <button
+                            class="text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors flex items-center gap-1 focus:outline-none">
+                            Procedimentos
+                            <span
+                                class="material-icons-outlined text-sm transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+                        </button>
+                        <div
+                            class="absolute left-0 top-full -mt-2 w-64 bg-[#1A1A1A]/95 backdrop-blur-md border border-gray-800 shadow-xl py-2 rounded-sm transform origin-top opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="blefaroplastia.html"
+                                class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Blefaroplastia</a>
+                            <a href="peeling-quimico.html"
+                                class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Peeling
+                                Químico</a>
+                            <a href="full-face.html"
+                                class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Full
+                                Face</a>
+                            <a href="bioestimuladores.html"
+                                class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Bioestimuladores</a>
+                            <a href="fios-de-pdo.html"
+                                class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Fios
+                                de PDO</a>
+                            <a href="microagulhamento.html"
+                                class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Microagulhamento</a>
+                            <a href="rinomodelacao.html"
+                                class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Rinomodelação</a>
+                            <a href="preenchimento-de-mento.html"
+                                class="block px-6 py-3 text-xs text-gray-300 hover:text-primary hover:bg-white/5 transition-colors uppercase tracking-wide">Preenchimento
+                                de Mento</a>
+                        </div>
+                    </div>
+                    <a class="text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors"
+                        href="index.html#about">Nosso Espaço</a>
+                    <a class="text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors"
+                        href="index.html#contact">Contato</a>
+                    <a class="text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors"
+                        href="index.html#blog">Blog</a>
+                </div>
+
+                <div class="hidden md:block">
+                    <a href="index.html#contact"
+                        class="px-6 py-3 bg-primary text-surface-dark text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-white transition-colors">
+                        Agendar Consulta
+                    </a>
+                </div>
+
+                <div class="md:hidden">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen"
+                        class="text-white hover:text-primary focus:outline-none p-2">
+                        <span class="material-icons-outlined" x-text="mobileMenuOpen ? 'close' : 'menu'">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" x-transition
+            class="md:hidden bg-[#1A1A1A]/95 backdrop-blur-md border-b border-gray-800 absolute top-[100%] left-0 w-full shadow-xl"
+            style="display: none;">
+            <div class="px-4 pt-4 pb-6 space-y-2 bg-[#1A1A1A]">
+                <div x-data="{ openProcedimentos: false }" class="py-2 border-b border-gray-800/50">
+                    <button @click="openProcedimentos = !openProcedimentos"
+                        class="w-full flex justify-between items-center text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors py-2 focus:outline-none">
+                        Procedimentos
+                        <span class="material-icons-outlined text-sm transition-transform duration-300"
+                            :class="openProcedimentos ? 'rotate-180' : ''">expand_more</span>
+                    </button>
+                    <div x-show="openProcedimentos" class="pl-4 py-3 space-y-4" style="display: none;" x-transition>
+                        <a href="blefaroplastia.html"
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Blefaroplastia</a>
+                        <a href="peeling-quimico.html"
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Peeling Químico</a>
+                        <a href="full-face.html"
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Full Face</a>
+                        <a href="bioestimuladores.html"
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Bioestimuladores</a>
+                        <a href="fios-de-pdo.html"
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Fios de PDO</a>
+                        <a href="microagulhamento.html"
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Microagulhamento</a>
+                        <a href="rinomodelacao.html"
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Rinomodelação</a>
+                        <a href="preenchimento-de-mento.html"
+                            class="block text-xs text-gray-400 hover:text-primary transition-colors uppercase tracking-wide">Preenchimento de Mento</a>
+                    </div>
+                </div>
+                <a href="index.html#about"
+                    class="block text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors py-3 border-b border-gray-800/50">Nosso
+                    Espaço</a>
+                <a href="index.html#contact"
+                    class="block text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors py-3 border-b border-gray-800/50">Contato</a>
+                <a href="index.html#blog"
+                    class="block text-xs uppercase tracking-[0.15em] text-white hover:text-primary transition-colors py-3 border-b border-gray-800/50">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CSS Noise Overlay -->
+    <svg class="pointer-events-none fixed inset-0 z-50 h-[100dvh] w-full opacity-[0.05]"
+        xmlns="http://www.w3.org/2000/svg">
+        <filter id="noiseFilter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+    </svg>
+
+    <!-- Article Hero Section -->
+    <header class="relative h-[65dvh] w-full flex items-end justify-center overflow-hidden pb-20 px-6 lg:px-24">
+        <div class="absolute inset-0 z-0">
+            <img alt="Rotina de cuidados essenciais pós-procedimento" class="w-full h-full object-cover object-center hero-bg-img"
+                src="assets/procedimentos/peeling.jpg" />
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <div class="relative z-10 w-full max-w-4xl mx-auto text-center">
+            <!-- Breadcrumbs / Category -->
+            <div
+                class="flex items-center justify-center space-x-2 text-primary text-xs uppercase tracking-widest font-bold mb-6 hero-text opacity-0 translate-y-8">
+                <a href="index.html#blog" class="hover:text-white transition-colors">Blog</a>
+                <span class="text-white/50">•</span>
+                <span>Skincare</span>
+            </div>
+
+            <!-- Article Title -->
+            <h1
+                class="font-display text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-8 hero-text opacity-0 translate-y-8">
+                Rotina de cuidados pós-procedimento
+            </h1>
+
+            <!-- Article Meta -->
+            <div
+                class="flex items-center justify-center space-x-4 text-white/70 text-sm font-light hero-text opacity-0 translate-y-8">
+                <span class="flex items-center gap-2"><span
+                        class="material-icons-outlined text-[18px]">calendar_today</span> 02 de Janeiro,
+                    2026</span>
+                <span>|</span>
+                <span class="flex items-center gap-2"><span class="material-icons-outlined text-[18px]">person</span>
+                    Por Dra. Lara Pires</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Body Section -->
+    <main class="py-24 px-6 bg-surface-light dark:bg-surface-dark relative z-20">
+        <article class="max-w-3xl mx-auto prose-container">
+            <div
+                class="text-lg text-text-light dark:text-gray-300 font-light leading-relaxed space-y-8">
+
+                <p
+                    class="text-xl md:text-2xl font-display text-gray-800 dark:text-white italic leading-snug !mb-12 border-l-2 border-primary pl-6">
+                    "O sucesso de uma intervenção estética é uma parceria: 50% acontecem dentro do consultório com a minha técnica, e os outros 50% acontecem na sua casa com os seus cuidados nos dias subsequentes."
+                </p>
+
+                <p>
+                    Uma das perguntas que mais ouço após finalizar uma aplicação de toxina botulínica, um preenchimento ou um microagulhamento é: <em>"E agora, Doutora? O que eu faço?"</em>. Acredite, a maneira como você trata a sua pele nas 72 horas após um procedimento muitas vezes dita a qualidade do resultado final.
+                </p>
+
+                <p>
+                    Procedimentos médicos, mesmo os minimamente invasivos, representam uma agressão controlada. Fazemos isso de propósito para induzir regeneração, estimular colágeno ou remodelar estruturas. O seu corpo entrará imediatamente em modo de recuperação, e o seu trabalho é não atrapalhar — e, preferencialmente, otimizar — esse fluxo natural.
+                </p>
+
+                <h2 class="font-display text-3xl text-gray-900 dark:text-white mt-16 mb-8">O tripé do sucesso pós-clínico</h2>
+
+                <p>
+                    A rotina perfeita pós-procedimento foca em três pilares básicos, não importa qual técnica recebida:
+                </p>
+
+                <ol class="space-y-6 list-decimal list-outside pl-6 marker:text-primary marker:font-bold">
+                    <li class="pl-2">
+                        <strong>Reduzir o quadro inflamatório excessivo.</strong> O próprio tratamento gera inflamação (o que é bom), mas você não deve potencializá-la com hábitos errados.
+                    </li>
+                    <li class="pl-2">
+                        <strong>Manter o produto/dispositivo onde ele foi colocado.</strong> Evitar que substâncias migrem antes de se fixarem corretamente nos tecidos.
+                    </li>
+                    <li class="pl-2">
+                        <strong>Acelerar a recuperação tecidual.</strong> Garantir que a barreira da pele volte a se fechar íntegra e blindada.
+                    </li>
+                </ol>
+
+                <h2 class="font-display text-3xl text-gray-900 dark:text-white mt-16 mb-8">As primeiras 24 horas: O Mínimo Indispensável</h2>
+
+                <p>
+                    Neste período inicial, o foco total deve ser o sossego para a pele.
+                </p>
+
+                <ul class="space-y-4 list-disc list-outside pl-6 marker:text-primary">
+                    <li class="pl-2"><strong>Nada de exercícios:</strong> Exercícios aumentam o fluxo sanguíneo e a pressão. Em procedimentos injetáveis, isso significa maior risco de hematomas e inchaço excessivo. Dê um descanso de no mínimo 24h a 48h.</li>
+
+                    <li class="pl-2"><strong>Não manipule a área:</strong> O instinto é passar os dedos para sentir se está inchado. Ao fazer isso em toxinas ou preenchedores recém aplicados, você pode espalhar material para músculos indevidos ou gerar irregularidades.</li>
+
+                    <li class="pl-2"><strong>Pausar ativos fortes:</strong> Se você usa retinol, ácidos esfoliantes ou vitamina C pura, dê um "stop" até orientação médica. Eles podem irritar severamente áreas recém perfuradas (como pós-microagulhamento).</li>
+                </ul>
+
+                <h2 class="font-display text-3xl text-gray-900 dark:text-white mt-16 mb-8">Construindo sua rotina "Recovery"</h2>
+
+                <p>
+                    Qual seria então a rotina universal de Skincare para os dias seguintes a um procedimento agressivo? A palavra de ordem é <strong>gentileza</strong>:
+                </p>
+
+                <p>
+                    <strong>Para higienizar:</strong> Substitua sabonetes adstringentes ou que contenham ácido salicílico por higienizadores extremamente suaves (como Syndets sem sabão). Lave o rosto com água em temperatura ambiente, nunca muito quente.
+                </p>
+
+                <p>
+                    <strong>Para hidratar:</strong> Prefira produtos com foco na <em>restauração de barreira cutânea</em>. Manteiga de Karité, Ceramidas, Pantenol e Ácido Hialurônico (em textura creme calmante) são seus melhores amigos.
+                </p>
+
+                <p>
+                    <strong>Para proteger:</strong> Protetor solar é indiscutível. O recomendado é o uso de filtros físicos, que refletem os raios UV e não correm o risco de irritar poros abertos. E cuidado com a maquiagem: dê preferência para protetores com cor em vez de bases asfálticas nos primeiros dois dias.
+                </p>
+
+
+                <p
+                    class="font-medium text-gray-900 dark:text-white mt-12 border-t border-gray-200 dark:border-gray-800 pt-8">
+                    Eu garanto a precisão técnica no consultório, e você garante a consolidação na sua casa. Essa responsabilidade conjuta resulta em tratamentos impecáveis. Ao sair da clínica, eu sempre disponibilizo as recomendações detalhadas por escrito para facilitar e acompanhar os seus dias de recovery.
+                </p>
+            </div>
+
+            <!-- Article Share and Tags -->
+            <div
+                class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-2 flex-wrap">
+                    <span class="text-sm text-gray-500 uppercase tracking-widest font-bold">Tags:</span>
+                    <span
+                        class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs text-gray-600 dark:text-gray-300 rounded-full font-medium">Skincare</span>
+                    <span
+                        class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs text-gray-600 dark:text-gray-300 rounded-full font-medium">Procedimento</span>
+                    <span
+                        class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs text-gray-600 dark:text-gray-300 rounded-full font-medium">Recuperação</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="text-sm text-gray-500 uppercase tracking-widest font-bold">Compartilhar:</span>
+                    <button
+                        class="w-8 h-8 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-primary hover:border-primary transition-colors"><span
+                            class="material-icons-outlined text-sm">link</span></button>
+                    <a href="https://wa.me/?text=Rotina de cuidados essenciais pós-procedimento - Dra Lara Pires" target="_blank"
+                        class="w-8 h-8 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-[#25D366] hover:border-[#25D366] transition-colors"><span
+                            class="material-icons-outlined text-sm">chat</span></a>
+                </div>
+            </div>
+
+            <!-- Author Bio Component -->
+            <div
+                class="mt-16 bg-background-light dark:bg-background-dark border border-gray-100 dark:border-gray-800 p-8 rounded-[2rem] flex flex-col sm:flex-row items-center sm:items-start gap-6">
+                <div
+                    class="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center shrink-0 border border-primary/20">
+                    <span class="font-display text-primary text-3xl">LP</span>
+                </div>
+                <div class="text-center sm:text-left">
+                    <h4 class="font-body font-bold text-gray-900 dark:text-white text-lg">Dra. Lara Pires</h4>
+                    <p class="text-primary text-xs uppercase tracking-widest font-bold mb-3">CRM 28229 | RQE 19486</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+                        Especialista em medicina estética com foco em procedimentos minimamente invasivos de resultados
+                        naturais. Apaixonada por devolver autoestima através do mapeamento anatômico Full Face e ciência
+                        da longevidade.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Contact CTA Box -->
+            <div class="mt-8 bg-black p-10 rounded-[2rem] text-center relative overflow-hidden group">
+                <div
+                    class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity duration-700">
+                </div>
+                <h3 class="font-display text-3xl text-white mb-4">Tratamento e Prevenção Juntos</h3>
+                <p class="text-gray-400 font-light mb-8 max-w-md mx-auto text-sm">Agende sua avaliação e descubra o protocolo clínico combinado à rotina skincare perfeita para turbinar sua beleza duradoura.</p>
+                <a href="https://wa.me/557197064582?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20com%20a%20Dra.%20Lara%20Pires"
+                    target="_blank"
+                    class="inline-block px-8 py-4 bg-primary text-black font-bold text-xs uppercase tracking-widest rounded-full hover:scale-105 transition-transform duration-300 shadow-xl shadow-primary/20">
+                    Agendar Avaliação
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- More Articles Section -->
+    <section class="py-24 bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h2 class="font-display text-3xl md:text-4xl text-text-light dark:text-white mb-2">Continue Lendo
+                    </h2>
+                    <div class="w-16 h-0.5 bg-primary"></div>
+                </div>
+                <a href="index.html#blog"
+                    class="text-sm font-medium text-primary uppercase tracking-widest mt-6 md:mt-0 hover:text-text-light dark:hover:text-white transition-colors flex items-center">
+                    Ver todos <span class="material-icons-outlined text-sm ml-1">arrow_forward</span>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto md:max-w-none">
+                <!-- Blog Card 1 -->
+                <article
+                    class="group bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300 rounded-[2rem]">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="assets/procedimentos/bioestumulador.jpg" alt="Bioestimuladores de Colágeno"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-primary text-xs font-bold uppercase tracking-widest mb-3">Pele</p>
+                        <h3
+                            class="font-display text-xl text-text-light dark:text-white mb-3 group-hover:text-primary transition-colors">
+                            A revolução dos Bioestimuladores de Colágeno</h3>
+                        <p class="text-muted-light dark:text-muted-dark font-light text-sm mb-6 line-clamp-2">
+                            Entenda como esses tratamentos estimulam a produção natural, devolvendo firmeza e
+                            juventude.
+                        </p>
+                        <a href="artigo-bioestimuladores.html"
+                            class="text-primary text-sm font-medium flex items-center group/link">
+                            Ler artigo <span
+                                class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article
+                    class="group bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300 rounded-[2rem]">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="assets/procedimentos/fullface.jpg" alt="Abordagem Full Face"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-primary text-xs font-bold uppercase tracking-widest mb-3">Harmonização</p>
+                        <h3
+                            class="font-display text-xl text-text-light dark:text-white mb-3 group-hover:text-primary transition-colors">
+                            O segredo do conceito Full Face</h3>
+                        <p class="text-muted-light dark:text-muted-dark font-light text-sm mb-6 line-clamp-2">
+                            Por que tratar o rosto como um todo entrega resultados muito mais harmoniosos e elegantes do
+                            que focar em áreas isoladas.
+                        </p>
+                        <a href="artigo-fullface.html"
+                            class="text-primary text-sm font-medium flex items-center group/link">
+                            Ler artigo <span
+                                class="material-icons-outlined text-sm ml-1 transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-background-dark text-white pt-20 pb-10 border-t border-gray-800" id="contact">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 lg:col-span-1">
+                    <a class="font-display text-2xl tracking-widest text-primary font-medium mb-6 block" href="index.html">
+                        LARA<span class="font-light">PIRES</span>
+                    </a>
+                    <p class="text-gray-400 font-light text-sm leading-relaxed mb-6">
+                        Medicina estética com ética, segurança e resultados naturais. Sua beleza é nossa prioridade.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-primary hover:border-primary transition-all"
+                            href="https://www.instagram.com/dralarapires" target="_blank" rel="noopener">
+                            <span class="material-icons-outlined text-lg">camera_alt</span>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-primary font-display text-lg mb-6">Menu</h4>
+                    <ul class="space-y-3 text-sm font-light text-gray-400">
+                        <li><a class="hover:text-white transition-colors" href="index.html#home">Home</a></li>
+                        <li><a class="hover:text-white transition-colors" href="index.html#about">Sobre Mim</a></li>
+                        <li><a class="hover:text-white transition-colors" href="index.html#procedures">Procedimentos</a>
+                        </li>
+                        <li><a class="hover:text-white transition-colors" href="index.html#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-primary font-display text-lg mb-6">Contato</h4>
+                    <ul class="space-y-4 text-sm font-light text-gray-400">
+                        <li class="flex items-start">
+                            <span class="material-icons-outlined text-primary mr-3 text-lg mt-0.5">location_on</span>
+                            <a href="#" class="hover:text-white transition-colors">Centro Médico Empresarial
+                                Vitraux<br />Salvador - BA</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons-outlined text-primary mr-3 text-lg">phone</span>
+                            <a href="https://wa.me/557197064582?text=Ol%C3%A1%2C%20quero%20marcar%20uma%20consulta%20com%20a%20Dra.%20Lara%20Pires"
+                                target="_blank" class="hover:text-white transition-colors">(71) 9706-4582</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-primary font-display text-lg mb-6">Agendamento</h4>
+                    <a class="w-full block text-center bg-primary hover:bg-primary-dark text-black py-3 text-sm uppercase tracking-widest font-bold transition-colors shadow-lg"
+                        href="https://wa.me/557197064582?text=Ol%C3%A1%2C%20quero%20marcar%20uma%20consulta%20com%20a%20Dra.%20Lara%20Pires"
+                        target="_blank" rel="noopener">
+                        Falar no WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div
+                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-light">
+                <p>© 2026 Dra. Lara Pires. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.to('.hero-text', {
+                y: 0,
+                opacity: 1,
+                duration: 1.2,
+                stagger: 0.15,
+                ease: "power3.out",
+                delay: 0.2
+            });
+        });
+    </script>
+</body>
+
+</html>
